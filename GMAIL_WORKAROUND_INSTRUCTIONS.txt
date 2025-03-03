@@ -1,0 +1,61 @@
+HALO PORTFOLIO SIMULATOR - INSTRUCTIONS FOR WORKING AROUND GMAIL FILTERS
+
+Gmail is blocking our Portfolio Simulator package because it contains script files needed to automatically install the simulator. Here are several options for sharing it:
+
+OPTION 1: USE A FILE SHARING SERVICE (RECOMMENDED)
+-------------------------------------------------
+1. Upload the "portfolio_simulator_one_click_install.zip" file to one of these services:
+   - Google Drive: https://drive.google.com/
+   - Dropbox: https://www.dropbox.com/
+   - OneDrive: https://onedrive.live.com/
+   - WeTransfer: https://wetransfer.com/
+
+2. Create a shareable link and send that link to your recipients.
+
+3. They can download the ZIP file directly and follow the installation instructions.
+
+
+OPTION 2: SEND TWO SEPARATE ZIP FILES
+------------------------------------
+1. Send the "portfolio_simulator_safe.zip" file as an email attachment
+   (This contains the core program without any installation scripts)
+
+2. Send the "portfolio_simulator_scripts.zip" file separately
+   (This contains the installation scripts that make it easy to run)
+
+3. Instruct your recipients to:
+   a. Download and extract both ZIP files
+   b. Copy all files from the "portfolio_simulator_scripts" folder into the 
+      "portfolio_simulator_safe" folder
+   c. Rename the "portfolio_simulator_safe" folder to "portfolio_simulator"
+   d. Run the appropriate installation script:
+      - Windows: double-click "install_and_run.bat"
+      - Mac: right-click "install_and_run.sh" and select "Open"
+
+
+OPTION 3: RENAME THE ZIP EXTENSION
+---------------------------------
+1. Rename "portfolio_simulator_one_click_install.zip" to "portfolio_simulator_one_click_install.zi_" 
+   (just changing the extension)
+
+2. Send it as an email attachment
+
+3. Instruct your recipients to:
+   a. Download the file
+   b. Rename it back to "portfolio_simulator_one_click_install.zip"
+   c. Extract the ZIP file
+   d. Run the appropriate installation script
+
+
+OPTION 4: PASSWORD-PROTECTED ZIP
+-------------------------------
+1. Send the "portfolio_simulator_protected.zip" file as an attachment
+
+2. Tell your recipients the password is: portfolio2025
+
+3. When they try to extract the ZIP file, they'll be prompted for this password
+
+4. After extraction, they can run the appropriate installation script
+
+
+If your recipients have ANY issues, please contact me and I'll help them get it set up! 

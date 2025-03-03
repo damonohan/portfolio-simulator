@@ -1,0 +1,43 @@
+===== PORTFOLIO SIMULATOR FOR MAC USERS =====
+
+The install script is being blocked by macOS security. Instead, please follow these manual steps:
+
+STEP 1: INSTALL PYTHON (IF NOT ALREADY INSTALLED)
+1. Visit https://www.python.org/downloads/
+2. Download and install the latest version of Python for macOS
+3. During installation, make sure to check "Add Python to PATH"
+
+STEP 2: DOWNLOAD AND EXTRACT FILES
+1. Download the "PortfolioSimulator_Mac_OneClick.zip" file from the link I sent you
+2. Double-click the ZIP file to extract it
+3. Move the "PortfolioSimulator_OneClick" folder to your desktop for easy access
+
+STEP 3: OPEN TERMINAL AND RUN COMMANDS
+1. Press Command+Space to open Spotlight Search
+2. Type "Terminal" and press Enter
+3. In Terminal, copy and paste the following commands (press Enter after each line):
+
+   cd ~/Desktop/PortfolioSimulator_OneClick
+   python3 -m venv .venv
+   source .venv/bin/activate
+   pip install --upgrade pip
+   pip install -r requirements.txt
+   python gui.py
+
+WHAT EACH COMMAND DOES:
+- First command: Navigates to the folder on your desktop
+- Second command: Creates a virtual environment
+- Third command: Activates the virtual environment
+- Fourth command: Updates pip (package installer)
+- Fifth command: Installs all required dependencies
+- Sixth command: Starts the Portfolio Simulator
+
+TO RUN THE PROGRAM AGAIN LATER:
+1. Open Terminal
+2. Run these three commands:
+   cd ~/Desktop/PortfolioSimulator_OneClick
+   source .venv/bin/activate
+   python gui.py
+
+===== NEED HELP? =====
+If you encounter any issues, please take a screenshot of any error messages and send them to me! 

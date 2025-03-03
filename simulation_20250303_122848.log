@@ -1,0 +1,644 @@
+2025-03-03 12:28:48,761 - src.main - INFO - Starting Portfolio Simulator
+2025-03-03 12:28:48,762 - src.main - INFO - Simulation period: 2008 to 2020
+2025-03-03 12:28:48,762 - src.main - INFO - Loading market data and structured notes...
+2025-03-03 12:28:48,762 - src.data_processing - INFO - Loading S&P 500 data from raw_data/sp500_yearly.csv
+2025-03-03 12:28:48,783 - src.data_processing - INFO - Loaded S&P 500 returns for 48 years
+2025-03-03 12:28:48,783 - src.data_processing - INFO - Loading bond return data from raw_data/bond_returns.csv
+2025-03-03 12:28:48,785 - src.data_processing - INFO - Loaded bond returns for 49 years
+2025-03-03 12:28:48,785 - src.data_processing - INFO - Loading structured note data from note_data/growth_notes.csv
+2025-03-03 12:28:48,786 - src.data_processing - INFO - Loaded 196 structured notes
+2025-03-03 12:28:48,786 - src.data_processing - INFO - Aligning data from 2008 to 2020
+2025-03-03 12:28:48,786 - src.data_processing - INFO - Found overlapping data for 13 years: 2008.0 to 2020.0
+2025-03-03 12:28:48,787 - src.main - INFO - Running portfolio simulation...
+2025-03-03 12:28:48,787 - src.portfolio - DEBUG - Rebalancing portfolio (value: $1,000,000.00)
+2025-03-03 12:28:48,787 - src.portfolio - DEBUG -   sp500: $600,000.00 (60.00%)
+2025-03-03 12:28:48,787 - src.portfolio - DEBUG -   bonds: $400,000.00 (40.00%)
+2025-03-03 12:28:48,787 - src.portfolio - INFO - Created portfolio with initial value $1,000,000.00
+2025-03-03 12:28:48,787 - src.portfolio - INFO -   Allocations: {'sp500': 0.6, 'bonds': 0.4}
+2025-03-03 12:28:48,787 - src.simulation - INFO - Created portfolio 'traditional' with allocations: {'sp500': 0.6, 'bonds': 0.4}
+2025-03-03 12:28:48,787 - src.portfolio - DEBUG - Rebalancing portfolio (value: $1,000,000.00)
+2025-03-03 12:28:48,787 - src.portfolio - DEBUG -   sp500: $400,000.00 (40.00%)
+2025-03-03 12:28:48,787 - src.portfolio - DEBUG -   bonds: $300,000.00 (30.00%)
+2025-03-03 12:28:48,787 - src.portfolio - DEBUG -   notes: $300,000.00 (30.00%)
+2025-03-03 12:28:48,787 - src.portfolio - INFO - Created portfolio with initial value $1,000,000.00
+2025-03-03 12:28:48,787 - src.portfolio - INFO -   Allocations: {'sp500': 0.4, 'bonds': 0.3, 'notes': 0.3}
+2025-03-03 12:28:48,787 - src.simulation - INFO - Created portfolio 'structured' with allocations: {'sp500': 0.4, 'bonds': 0.3, 'notes': 0.3}
+2025-03-03 12:28:48,788 - src.retirement - INFO - Created withdrawal strategy: FixedPercentageWithdrawal
+2025-03-03 12:28:48,788 - src.retirement - INFO - Fixed percentage withdrawal: 4.00%
+2025-03-03 12:28:48,788 - src.simulation - INFO - Created withdrawal strategy: FixedPercentageWithdrawal
+2025-03-03 12:28:48,788 - src.simulation - INFO - Initialized simulation: 2008 to 2020
+2025-03-03 12:28:48,788 - src.simulation - INFO - Running simulation from 2008 to 2020
+2025-03-03 12:28:48,788 - src.simulation - INFO - Simulating year 2008
+2025-03-03 12:28:48,788 - src.simulation - INFO - ===== YEAR 2008 RETURNS =====
+2025-03-03 12:28:48,788 - src.simulation - INFO - S&P 500: -38.4858%, Bond: 6.8639%
+2025-03-03 12:28:48,788 - src.simulation - INFO - Selecting structured note for year 2008
+2025-03-03 12:28:48,788 - src.simulation - INFO - Found 4 notes available for year 2008
+2025-03-03 12:28:48,788 - src.simulation - INFO - Target protection level: 20%
+2025-03-03 12:28:48,788 - src.simulation - INFO - Found exact match: 20% Buffer, PR: 0.8367
+2025-03-03 12:28:48,788 - src.structured_notes - DEBUG - Created structured note: No ID, PR: 0.84, Protection: 0.20, Year: 2008
+2025-03-03 12:28:48,788 - src.simulation - INFO - STRUCTURED NOTE: S&P 500 20% Buffer Note (PR: 0.84)
+2025-03-03 12:28:48,788 - src.simulation - INFO - - Protection Level: 20.00%
+2025-03-03 12:28:48,788 - src.simulation - INFO - - Participation Rate: 0.8367
+2025-03-03 12:28:48,788 - src.simulation - INFO - - Protection Type: Buffer
+2025-03-03 12:28:48,788 - src.simulation - INFO - - Underlying Asset Return: -38.4858%
+2025-03-03 12:28:48,788 - src.structured_notes - INFO - BUFFERED NOTE CALCULATION:
+2025-03-03 12:28:48,788 - src.structured_notes - INFO -   Step 1: Analyze underlying return: -38.4858%
+2025-03-03 12:28:48,788 - src.structured_notes - INFO -   Step 2: Negative return detected, applying buffer protection
+2025-03-03 12:28:48,788 - src.structured_notes - INFO -     Absolute value of return: |-38.4858%| = 38.4858%
+2025-03-03 12:28:48,788 - src.structured_notes - INFO -     Buffer protection level: 20.0000%
+2025-03-03 12:28:48,788 - src.structured_notes - INFO -   Step 3: Loss EXCEEDS buffer (38.4858% > 20.0000%)
+2025-03-03 12:28:48,788 - src.structured_notes - INFO -     Excess loss beyond buffer: 38.4858% - 20.0000% = 18.4858%
+2025-03-03 12:28:48,788 - src.structured_notes - INFO -   Step 4: Final return result: -18.4858%
+2025-03-03 12:28:48,788 - src.simulation - INFO - - Final Note Return: -18.4858%
+2025-03-03 12:28:48,788 - src.portfolio - DEBUG - Applying returns to portfolio (value: $1,000,000.00)
+2025-03-03 12:28:48,788 - src.portfolio - DEBUG -   sp500: $600,000.00 -> $369,085.24 (return: -38.49%)
+2025-03-03 12:28:48,788 - src.portfolio - DEBUG -   bonds: $400,000.00 -> $427,455.70 (return: 6.86%)
+2025-03-03 12:28:48,788 - src.portfolio - DEBUG - New portfolio value: $796,540.94
+2025-03-03 12:28:48,788 - src.retirement - DEBUG - Year 2008: Fixed percentage withdrawal: 4.00% * $796,540.94 = $31,861.64
+2025-03-03 12:28:48,788 - src.portfolio - DEBUG -   Withdrew $14,763.41 from sp500
+2025-03-03 12:28:48,788 - src.portfolio - DEBUG -   Withdrew $17,098.23 from bonds
+2025-03-03 12:28:48,788 - src.portfolio - DEBUG - After withdrawal: $764,679.30
+2025-03-03 12:28:48,788 - src.simulation - INFO -   Portfolio 'traditional': $764,679.30 (Return: -23.53%)
+2025-03-03 12:28:48,788 - src.portfolio - DEBUG - Rebalancing portfolio (value: $764,679.30)
+2025-03-03 12:28:48,788 - src.portfolio - DEBUG -   sp500: $458,807.58 (60.00%)
+2025-03-03 12:28:48,788 - src.portfolio - DEBUG -   bonds: $305,871.72 (40.00%)
+2025-03-03 12:28:48,788 - src.portfolio - DEBUG - Applying returns to portfolio (value: $1,000,000.00)
+2025-03-03 12:28:48,789 - src.portfolio - DEBUG -   sp500: $400,000.00 -> $246,056.83 (return: -38.49%)
+2025-03-03 12:28:48,789 - src.portfolio - DEBUG -   bonds: $300,000.00 -> $320,591.77 (return: 6.86%)
+2025-03-03 12:28:48,789 - src.portfolio - DEBUG -   notes: $300,000.00 -> $244,542.62 (return: -18.49%)
+2025-03-03 12:28:48,789 - src.portfolio - DEBUG - New portfolio value: $811,191.22
+2025-03-03 12:28:48,789 - src.retirement - DEBUG - Year 2008: Fixed percentage withdrawal: 4.00% * $811,191.22 = $32,447.65
+2025-03-03 12:28:48,789 - src.portfolio - DEBUG -   Withdrew $9,842.27 from sp500
+2025-03-03 12:28:48,789 - src.portfolio - DEBUG -   Withdrew $12,823.67 from bonds
+2025-03-03 12:28:48,789 - src.portfolio - DEBUG -   Withdrew $9,781.70 from notes
+2025-03-03 12:28:48,789 - src.portfolio - DEBUG - After withdrawal: $778,743.57
+2025-03-03 12:28:48,789 - src.simulation - INFO -   Portfolio 'structured': $778,743.57 (Return: -22.13%)
+2025-03-03 12:28:48,789 - src.portfolio - DEBUG - Rebalancing portfolio (value: $778,743.57)
+2025-03-03 12:28:48,789 - src.portfolio - DEBUG -   sp500: $311,497.43 (40.00%)
+2025-03-03 12:28:48,789 - src.portfolio - DEBUG -   bonds: $233,623.07 (30.00%)
+2025-03-03 12:28:48,789 - src.portfolio - DEBUG -   notes: $233,623.07 (30.00%)
+2025-03-03 12:28:48,789 - src.simulation - INFO - Simulating year 2009
+2025-03-03 12:28:48,789 - src.simulation - INFO - ===== YEAR 2009 RETURNS =====
+2025-03-03 12:28:48,789 - src.simulation - INFO - S&P 500: 23.4542%, Bond: 3.6366%
+2025-03-03 12:28:48,789 - src.simulation - INFO - Selecting structured note for year 2009
+2025-03-03 12:28:48,789 - src.simulation - INFO - Found 4 notes available for year 2009
+2025-03-03 12:28:48,789 - src.simulation - INFO - Target protection level: 20%
+2025-03-03 12:28:48,789 - src.simulation - INFO - Found exact match: 20% Buffer, PR: 0.8804
+2025-03-03 12:28:48,789 - src.structured_notes - DEBUG - Created structured note: No ID, PR: 0.88, Protection: 0.20, Year: 2009
+2025-03-03 12:28:48,789 - src.simulation - INFO - STRUCTURED NOTE: S&P 500 20% Buffer Note (PR: 0.88)
+2025-03-03 12:28:48,789 - src.simulation - INFO - - Protection Level: 20.00%
+2025-03-03 12:28:48,789 - src.simulation - INFO - - Participation Rate: 0.8804
+2025-03-03 12:28:48,789 - src.simulation - INFO - - Protection Type: Buffer
+2025-03-03 12:28:48,789 - src.simulation - INFO - - Underlying Asset Return: 23.4542%
+2025-03-03 12:28:48,789 - src.structured_notes - INFO - BUFFERED NOTE CALCULATION:
+2025-03-03 12:28:48,789 - src.structured_notes - INFO -   Step 1: Analyze underlying return: 23.4542%
+2025-03-03 12:28:48,789 - src.structured_notes - INFO -   Step 2: Positive return detected, applying participation rate
+2025-03-03 12:28:48,789 - src.structured_notes - INFO -     Calculation: 23.4542% × 0.8804
+2025-03-03 12:28:48,789 - src.structured_notes - INFO -   Step 3: Final positive return result: 20.6491%
+2025-03-03 12:28:48,789 - src.simulation - INFO - - Final Note Return: 20.6491%
+2025-03-03 12:28:48,789 - src.portfolio - DEBUG - Applying returns to portfolio (value: $764,679.30)
+2025-03-03 12:28:48,789 - src.portfolio - DEBUG -   sp500: $458,807.58 -> $566,417.19 (return: 23.45%)
+2025-03-03 12:28:48,789 - src.portfolio - DEBUG -   bonds: $305,871.72 -> $316,995.13 (return: 3.64%)
+2025-03-03 12:28:48,789 - src.portfolio - DEBUG - New portfolio value: $883,412.32
+2025-03-03 12:28:48,789 - src.retirement - DEBUG - Year 2009: Fixed percentage withdrawal: 4.00% * $883,412.32 = $35,336.49
+2025-03-03 12:28:48,789 - src.portfolio - DEBUG -   Withdrew $22,656.69 from sp500
+2025-03-03 12:28:48,789 - src.portfolio - DEBUG -   Withdrew $12,679.81 from bonds
+2025-03-03 12:28:48,789 - src.portfolio - DEBUG - After withdrawal: $848,075.82
+2025-03-03 12:28:48,790 - src.simulation - INFO -   Portfolio 'traditional': $848,075.82 (Return: 10.91%)
+2025-03-03 12:28:48,790 - src.portfolio - DEBUG - Rebalancing portfolio (value: $848,075.82)
+2025-03-03 12:28:48,790 - src.portfolio - DEBUG -   sp500: $508,845.49 (60.00%)
+2025-03-03 12:28:48,790 - src.portfolio - DEBUG -   bonds: $339,230.33 (40.00%)
+2025-03-03 12:28:48,790 - src.portfolio - DEBUG - Applying returns to portfolio (value: $778,743.57)
+2025-03-03 12:28:48,790 - src.portfolio - DEBUG -   sp500: $311,497.43 -> $384,556.63 (return: 23.45%)
+2025-03-03 12:28:48,790 - src.portfolio - DEBUG -   bonds: $233,623.07 -> $242,119.07 (return: 3.64%)
+2025-03-03 12:28:48,790 - src.portfolio - DEBUG -   notes: $233,623.07 -> $281,864.22 (return: 20.65%)
+2025-03-03 12:28:48,790 - src.portfolio - DEBUG - New portfolio value: $908,539.92
+2025-03-03 12:28:48,790 - src.retirement - DEBUG - Year 2009: Fixed percentage withdrawal: 4.00% * $908,539.92 = $36,341.60
+2025-03-03 12:28:48,790 - src.portfolio - DEBUG -   Withdrew $15,382.27 from sp500
+2025-03-03 12:28:48,790 - src.portfolio - DEBUG -   Withdrew $9,684.76 from bonds
+2025-03-03 12:28:48,790 - src.portfolio - DEBUG -   Withdrew $11,274.57 from notes
+2025-03-03 12:28:48,790 - src.portfolio - DEBUG - After withdrawal: $872,198.32
+2025-03-03 12:28:48,790 - src.simulation - INFO -   Portfolio 'structured': $872,198.32 (Return: 12.00%)
+2025-03-03 12:28:48,790 - src.portfolio - DEBUG - Rebalancing portfolio (value: $872,198.32)
+2025-03-03 12:28:48,790 - src.portfolio - DEBUG -   sp500: $348,879.33 (40.00%)
+2025-03-03 12:28:48,790 - src.portfolio - DEBUG -   bonds: $261,659.50 (30.00%)
+2025-03-03 12:28:48,790 - src.portfolio - DEBUG -   notes: $261,659.50 (30.00%)
+2025-03-03 12:28:48,790 - src.simulation - INFO - Simulating year 2010
+2025-03-03 12:28:48,790 - src.simulation - INFO - ===== YEAR 2010 RETURNS =====
+2025-03-03 12:28:48,790 - src.simulation - INFO - S&P 500: 12.7827%, Bond: 6.1987%
+2025-03-03 12:28:48,790 - src.simulation - INFO - Selecting structured note for year 2010
+2025-03-03 12:28:48,790 - src.simulation - INFO - Found 4 notes available for year 2010
+2025-03-03 12:28:48,790 - src.simulation - INFO - Target protection level: 20%
+2025-03-03 12:28:48,790 - src.simulation - INFO - Found exact match: 20% Buffer, PR: 0.7431
+2025-03-03 12:28:48,790 - src.structured_notes - DEBUG - Created structured note: No ID, PR: 0.74, Protection: 0.20, Year: 2010
+2025-03-03 12:28:48,790 - src.simulation - INFO - STRUCTURED NOTE: S&P 500 20% Buffer Note (PR: 0.74)
+2025-03-03 12:28:48,790 - src.simulation - INFO - - Protection Level: 20.00%
+2025-03-03 12:28:48,790 - src.simulation - INFO - - Participation Rate: 0.7431
+2025-03-03 12:28:48,790 - src.simulation - INFO - - Protection Type: Buffer
+2025-03-03 12:28:48,790 - src.simulation - INFO - - Underlying Asset Return: 12.7827%
+2025-03-03 12:28:48,790 - src.structured_notes - INFO - BUFFERED NOTE CALCULATION:
+2025-03-03 12:28:48,790 - src.structured_notes - INFO -   Step 1: Analyze underlying return: 12.7827%
+2025-03-03 12:28:48,790 - src.structured_notes - INFO -   Step 2: Positive return detected, applying participation rate
+2025-03-03 12:28:48,790 - src.structured_notes - INFO -     Calculation: 12.7827% × 0.7431
+2025-03-03 12:28:48,790 - src.structured_notes - INFO -   Step 3: Final positive return result: 9.4983%
+2025-03-03 12:28:48,790 - src.simulation - INFO - - Final Note Return: 9.4983%
+2025-03-03 12:28:48,790 - src.portfolio - DEBUG - Applying returns to portfolio (value: $848,075.82)
+2025-03-03 12:28:48,790 - src.portfolio - DEBUG -   sp500: $508,845.49 -> $573,889.76 (return: 12.78%)
+2025-03-03 12:28:48,790 - src.portfolio - DEBUG -   bonds: $339,230.33 -> $360,258.09 (return: 6.20%)
+2025-03-03 12:28:48,790 - src.portfolio - DEBUG - New portfolio value: $934,147.85
+2025-03-03 12:28:48,790 - src.retirement - DEBUG - Year 2010: Fixed percentage withdrawal: 4.00% * $934,147.85 = $37,365.91
+2025-03-03 12:28:48,790 - src.portfolio - DEBUG -   Withdrew $22,955.59 from sp500
+2025-03-03 12:28:48,790 - src.portfolio - DEBUG -   Withdrew $14,410.32 from bonds
+2025-03-03 12:28:48,790 - src.portfolio - DEBUG - After withdrawal: $896,781.93
+2025-03-03 12:28:48,790 - src.simulation - INFO -   Portfolio 'traditional': $896,781.93 (Return: 5.74%)
+2025-03-03 12:28:48,790 - src.portfolio - DEBUG - Rebalancing portfolio (value: $896,781.93)
+2025-03-03 12:28:48,790 - src.portfolio - DEBUG -   sp500: $538,069.16 (60.00%)
+2025-03-03 12:28:48,790 - src.portfolio - DEBUG -   bonds: $358,712.77 (40.00%)
+2025-03-03 12:28:48,790 - src.portfolio - DEBUG - Applying returns to portfolio (value: $872,198.32)
+2025-03-03 12:28:48,791 - src.portfolio - DEBUG -   sp500: $348,879.33 -> $393,475.57 (return: 12.78%)
+2025-03-03 12:28:48,791 - src.portfolio - DEBUG -   bonds: $261,659.50 -> $277,878.90 (return: 6.20%)
+2025-03-03 12:28:48,791 - src.portfolio - DEBUG -   notes: $261,659.50 -> $286,512.77 (return: 9.50%)
+2025-03-03 12:28:48,791 - src.portfolio - DEBUG - New portfolio value: $957,867.24
+2025-03-03 12:28:48,791 - src.retirement - DEBUG - Year 2010: Fixed percentage withdrawal: 4.00% * $957,867.24 = $38,314.69
+2025-03-03 12:28:48,791 - src.portfolio - DEBUG -   Withdrew $15,739.02 from sp500
+2025-03-03 12:28:48,791 - src.portfolio - DEBUG -   Withdrew $11,115.16 from bonds
+2025-03-03 12:28:48,791 - src.portfolio - DEBUG -   Withdrew $11,460.51 from notes
+2025-03-03 12:28:48,791 - src.portfolio - DEBUG - After withdrawal: $919,552.55
+2025-03-03 12:28:48,791 - src.simulation - INFO -   Portfolio 'structured': $919,552.55 (Return: 5.43%)
+2025-03-03 12:28:48,791 - src.portfolio - DEBUG - Rebalancing portfolio (value: $919,552.55)
+2025-03-03 12:28:48,791 - src.portfolio - DEBUG -   sp500: $367,821.02 (40.00%)
+2025-03-03 12:28:48,791 - src.portfolio - DEBUG -   bonds: $275,865.76 (30.00%)
+2025-03-03 12:28:48,791 - src.portfolio - DEBUG -   notes: $275,865.76 (30.00%)
+2025-03-03 12:28:48,791 - src.simulation - INFO - Simulating year 2011
+2025-03-03 12:28:48,791 - src.simulation - INFO - ===== YEAR 2011 RETURNS =====
+2025-03-03 12:28:48,791 - src.simulation - INFO - S&P 500: -0.0032%, Bond: 7.9297%
+2025-03-03 12:28:48,791 - src.simulation - INFO - Selecting structured note for year 2011
+2025-03-03 12:28:48,791 - src.simulation - INFO - Found 4 notes available for year 2011
+2025-03-03 12:28:48,791 - src.simulation - INFO - Target protection level: 20%
+2025-03-03 12:28:48,791 - src.simulation - INFO - Found exact match: 20% Buffer, PR: 0.7080
+2025-03-03 12:28:48,791 - src.structured_notes - DEBUG - Created structured note: No ID, PR: 0.71, Protection: 0.20, Year: 2011
+2025-03-03 12:28:48,791 - src.simulation - INFO - STRUCTURED NOTE: S&P 500 20% Buffer Note (PR: 0.71)
+2025-03-03 12:28:48,791 - src.simulation - INFO - - Protection Level: 20.00%
+2025-03-03 12:28:48,791 - src.simulation - INFO - - Participation Rate: 0.7080
+2025-03-03 12:28:48,791 - src.simulation - INFO - - Protection Type: Buffer
+2025-03-03 12:28:48,791 - src.simulation - INFO - - Underlying Asset Return: -0.0032%
+2025-03-03 12:28:48,791 - src.structured_notes - INFO - BUFFERED NOTE CALCULATION:
+2025-03-03 12:28:48,791 - src.structured_notes - INFO -   Step 1: Analyze underlying return: -0.0032%
+2025-03-03 12:28:48,791 - src.structured_notes - INFO -   Step 2: Negative return detected, applying buffer protection
+2025-03-03 12:28:48,791 - src.structured_notes - INFO -     Absolute value of return: |-0.0032%| = 0.0032%
+2025-03-03 12:28:48,791 - src.structured_notes - INFO -     Buffer protection level: 20.0000%
+2025-03-03 12:28:48,791 - src.structured_notes - INFO -   Step 3: Loss is WITHIN buffer (0.0032% ≤ 20.0000%)
+2025-03-03 12:28:48,791 - src.structured_notes - INFO -     Full downside protection applies
+2025-03-03 12:28:48,791 - src.structured_notes - INFO -   Step 4: Final return result: 0.00%
+2025-03-03 12:28:48,791 - src.simulation - INFO - - Final Note Return: 0.0000%
+2025-03-03 12:28:48,791 - src.portfolio - DEBUG - Applying returns to portfolio (value: $896,781.93)
+2025-03-03 12:28:48,791 - src.portfolio - DEBUG -   sp500: $538,069.16 -> $538,052.03 (return: -0.00%)
+2025-03-03 12:28:48,791 - src.portfolio - DEBUG -   bonds: $358,712.77 -> $387,157.52 (return: 7.93%)
+2025-03-03 12:28:48,791 - src.portfolio - DEBUG - New portfolio value: $925,209.55
+2025-03-03 12:28:48,791 - src.retirement - DEBUG - Year 2011: Fixed percentage withdrawal: 4.00% * $925,209.55 = $37,008.38
+2025-03-03 12:28:48,791 - src.portfolio - DEBUG -   Withdrew $21,522.08 from sp500
+2025-03-03 12:28:48,791 - src.portfolio - DEBUG -   Withdrew $15,486.30 from bonds
+2025-03-03 12:28:48,791 - src.portfolio - DEBUG - After withdrawal: $888,201.16
+2025-03-03 12:28:48,791 - src.simulation - INFO -   Portfolio 'traditional': $888,201.16 (Return: -0.96%)
+2025-03-03 12:28:48,791 - src.portfolio - DEBUG - Rebalancing portfolio (value: $888,201.16)
+2025-03-03 12:28:48,791 - src.portfolio - DEBUG -   sp500: $532,920.70 (60.00%)
+2025-03-03 12:28:48,791 - src.portfolio - DEBUG -   bonds: $355,280.47 (40.00%)
+2025-03-03 12:28:48,791 - src.portfolio - DEBUG - Applying returns to portfolio (value: $919,552.55)
+2025-03-03 12:28:48,791 - src.portfolio - DEBUG -   sp500: $367,821.02 -> $367,809.31 (return: -0.00%)
+2025-03-03 12:28:48,792 - src.portfolio - DEBUG -   bonds: $275,865.76 -> $297,741.01 (return: 7.93%)
+2025-03-03 12:28:48,792 - src.portfolio - DEBUG -   notes: $275,865.76 -> $275,865.76 (return: 0.00%)
+2025-03-03 12:28:48,792 - src.portfolio - DEBUG - New portfolio value: $941,416.08
+2025-03-03 12:28:48,792 - src.retirement - DEBUG - Year 2011: Fixed percentage withdrawal: 4.00% * $941,416.08 = $37,656.64
+2025-03-03 12:28:48,792 - src.portfolio - DEBUG -   Withdrew $14,712.37 from sp500
+2025-03-03 12:28:48,792 - src.portfolio - DEBUG -   Withdrew $11,909.64 from bonds
+2025-03-03 12:28:48,792 - src.portfolio - DEBUG -   Withdrew $11,034.63 from notes
+2025-03-03 12:28:48,792 - src.portfolio - DEBUG - After withdrawal: $903,759.44
+2025-03-03 12:28:48,792 - src.simulation - INFO -   Portfolio 'structured': $903,759.44 (Return: -1.72%)
+2025-03-03 12:28:48,792 - src.portfolio - DEBUG - Rebalancing portfolio (value: $903,759.44)
+2025-03-03 12:28:48,792 - src.portfolio - DEBUG -   sp500: $361,503.78 (40.00%)
+2025-03-03 12:28:48,792 - src.portfolio - DEBUG -   bonds: $271,127.83 (30.00%)
+2025-03-03 12:28:48,792 - src.portfolio - DEBUG -   notes: $271,127.83 (30.00%)
+2025-03-03 12:28:48,792 - src.simulation - INFO - Simulating year 2012
+2025-03-03 12:28:48,792 - src.simulation - INFO - ===== YEAR 2012 RETURNS =====
+2025-03-03 12:28:48,792 - src.simulation - INFO - S&P 500: 13.4057%, Bond: 2.9409%
+2025-03-03 12:28:48,792 - src.simulation - INFO - Selecting structured note for year 2012
+2025-03-03 12:28:48,792 - src.simulation - INFO - Found 4 notes available for year 2012
+2025-03-03 12:28:48,792 - src.simulation - INFO - Target protection level: 20%
+2025-03-03 12:28:48,792 - src.simulation - INFO - Found exact match: 20% Buffer, PR: 0.7524
+2025-03-03 12:28:48,792 - src.structured_notes - DEBUG - Created structured note: No ID, PR: 0.75, Protection: 0.20, Year: 2012
+2025-03-03 12:28:48,792 - src.simulation - INFO - STRUCTURED NOTE: S&P 500 20% Buffer Note (PR: 0.75)
+2025-03-03 12:28:48,792 - src.simulation - INFO - - Protection Level: 20.00%
+2025-03-03 12:28:48,792 - src.simulation - INFO - - Participation Rate: 0.7524
+2025-03-03 12:28:48,792 - src.simulation - INFO - - Protection Type: Buffer
+2025-03-03 12:28:48,792 - src.simulation - INFO - - Underlying Asset Return: 13.4057%
+2025-03-03 12:28:48,792 - src.structured_notes - INFO - BUFFERED NOTE CALCULATION:
+2025-03-03 12:28:48,792 - src.structured_notes - INFO -   Step 1: Analyze underlying return: 13.4057%
+2025-03-03 12:28:48,792 - src.structured_notes - INFO -   Step 2: Positive return detected, applying participation rate
+2025-03-03 12:28:48,792 - src.structured_notes - INFO -     Calculation: 13.4057% × 0.7524
+2025-03-03 12:28:48,792 - src.structured_notes - INFO -   Step 3: Final positive return result: 10.0868%
+2025-03-03 12:28:48,792 - src.simulation - INFO - - Final Note Return: 10.0868%
+2025-03-03 12:28:48,792 - src.portfolio - DEBUG - Applying returns to portfolio (value: $888,201.16)
+2025-03-03 12:28:48,792 - src.portfolio - DEBUG -   sp500: $532,920.70 -> $604,362.40 (return: 13.41%)
+2025-03-03 12:28:48,792 - src.portfolio - DEBUG -   bonds: $355,280.47 -> $365,729.07 (return: 2.94%)
+2025-03-03 12:28:48,792 - src.portfolio - DEBUG - New portfolio value: $970,091.47
+2025-03-03 12:28:48,792 - src.retirement - DEBUG - Year 2012: Fixed percentage withdrawal: 4.00% * $970,091.47 = $38,803.66
+2025-03-03 12:28:48,792 - src.portfolio - DEBUG -   Withdrew $24,174.50 from sp500
+2025-03-03 12:28:48,792 - src.portfolio - DEBUG -   Withdrew $14,629.16 from bonds
+2025-03-03 12:28:48,792 - src.portfolio - DEBUG - After withdrawal: $931,287.81
+2025-03-03 12:28:48,792 - src.simulation - INFO -   Portfolio 'traditional': $931,287.81 (Return: 4.85%)
+2025-03-03 12:28:48,792 - src.portfolio - DEBUG - Rebalancing portfolio (value: $931,287.81)
+2025-03-03 12:28:48,792 - src.portfolio - DEBUG -   sp500: $558,772.69 (60.00%)
+2025-03-03 12:28:48,792 - src.portfolio - DEBUG -   bonds: $372,515.13 (40.00%)
+2025-03-03 12:28:48,792 - src.portfolio - DEBUG - Applying returns to portfolio (value: $903,759.44)
+2025-03-03 12:28:48,792 - src.portfolio - DEBUG -   sp500: $361,503.78 -> $409,965.86 (return: 13.41%)
+2025-03-03 12:28:48,792 - src.portfolio - DEBUG -   bonds: $271,127.83 -> $279,101.56 (return: 2.94%)
+2025-03-03 12:28:48,792 - src.portfolio - DEBUG -   notes: $271,127.83 -> $298,475.89 (return: 10.09%)
+2025-03-03 12:28:48,792 - src.portfolio - DEBUG - New portfolio value: $987,543.30
+2025-03-03 12:28:48,792 - src.retirement - DEBUG - Year 2012: Fixed percentage withdrawal: 4.00% * $987,543.30 = $39,501.73
+2025-03-03 12:28:48,792 - src.portfolio - DEBUG -   Withdrew $16,398.63 from sp500
+2025-03-03 12:28:48,793 - src.portfolio - DEBUG -   Withdrew $11,164.06 from bonds
+2025-03-03 12:28:48,793 - src.portfolio - DEBUG -   Withdrew $11,939.04 from notes
+2025-03-03 12:28:48,793 - src.portfolio - DEBUG - After withdrawal: $948,041.57
+2025-03-03 12:28:48,793 - src.simulation - INFO -   Portfolio 'structured': $948,041.57 (Return: 4.90%)
+2025-03-03 12:28:48,793 - src.portfolio - DEBUG - Rebalancing portfolio (value: $948,041.57)
+2025-03-03 12:28:48,793 - src.portfolio - DEBUG -   sp500: $379,216.63 (40.00%)
+2025-03-03 12:28:48,793 - src.portfolio - DEBUG -   bonds: $284,412.47 (30.00%)
+2025-03-03 12:28:48,793 - src.portfolio - DEBUG -   notes: $284,412.47 (30.00%)
+2025-03-03 12:28:48,793 - src.simulation - INFO - Simulating year 2013
+2025-03-03 12:28:48,793 - src.simulation - INFO - ===== YEAR 2013 RETURNS =====
+2025-03-03 12:28:48,793 - src.simulation - INFO - S&P 500: 29.6012%, Bond: -2.1075%
+2025-03-03 12:28:48,793 - src.simulation - INFO - Selecting structured note for year 2013
+2025-03-03 12:28:48,793 - src.simulation - INFO - Found 4 notes available for year 2013
+2025-03-03 12:28:48,793 - src.simulation - INFO - Target protection level: 20%
+2025-03-03 12:28:48,793 - src.simulation - INFO - Found exact match: 20% Buffer, PR: 0.8372
+2025-03-03 12:28:48,793 - src.structured_notes - DEBUG - Created structured note: No ID, PR: 0.84, Protection: 0.20, Year: 2013
+2025-03-03 12:28:48,793 - src.simulation - INFO - STRUCTURED NOTE: S&P 500 20% Buffer Note (PR: 0.84)
+2025-03-03 12:28:48,793 - src.simulation - INFO - - Protection Level: 20.00%
+2025-03-03 12:28:48,793 - src.simulation - INFO - - Participation Rate: 0.8372
+2025-03-03 12:28:48,793 - src.simulation - INFO - - Protection Type: Buffer
+2025-03-03 12:28:48,793 - src.simulation - INFO - - Underlying Asset Return: 29.6012%
+2025-03-03 12:28:48,793 - src.structured_notes - INFO - BUFFERED NOTE CALCULATION:
+2025-03-03 12:28:48,793 - src.structured_notes - INFO -   Step 1: Analyze underlying return: 29.6012%
+2025-03-03 12:28:48,793 - src.structured_notes - INFO -   Step 2: Positive return detected, applying participation rate
+2025-03-03 12:28:48,793 - src.structured_notes - INFO -     Calculation: 29.6012% × 0.8372
+2025-03-03 12:28:48,793 - src.structured_notes - INFO -   Step 3: Final positive return result: 24.7826%
+2025-03-03 12:28:48,793 - src.simulation - INFO - - Final Note Return: 24.7826%
+2025-03-03 12:28:48,793 - src.portfolio - DEBUG - Applying returns to portfolio (value: $931,287.81)
+2025-03-03 12:28:48,793 - src.portfolio - DEBUG -   sp500: $558,772.69 -> $724,176.39 (return: 29.60%)
+2025-03-03 12:28:48,793 - src.portfolio - DEBUG -   bonds: $372,515.13 -> $364,664.49 (return: -2.11%)
+2025-03-03 12:28:48,793 - src.portfolio - DEBUG - New portfolio value: $1,088,840.88
+2025-03-03 12:28:48,793 - src.retirement - DEBUG - Year 2013: Fixed percentage withdrawal: 4.00% * $1,088,840.88 = $43,553.64
+2025-03-03 12:28:48,793 - src.portfolio - DEBUG -   Withdrew $28,967.06 from sp500
+2025-03-03 12:28:48,793 - src.portfolio - DEBUG -   Withdrew $14,586.58 from bonds
+2025-03-03 12:28:48,793 - src.portfolio - DEBUG - After withdrawal: $1,045,287.24
+2025-03-03 12:28:48,793 - src.simulation - INFO -   Portfolio 'traditional': $1,045,287.24 (Return: 12.24%)
+2025-03-03 12:28:48,793 - src.portfolio - DEBUG - Rebalancing portfolio (value: $1,045,287.24)
+2025-03-03 12:28:48,793 - src.portfolio - DEBUG -   sp500: $627,172.34 (60.00%)
+2025-03-03 12:28:48,793 - src.portfolio - DEBUG -   bonds: $418,114.90 (40.00%)
+2025-03-03 12:28:48,793 - src.portfolio - DEBUG - Applying returns to portfolio (value: $948,041.57)
+2025-03-03 12:28:48,793 - src.portfolio - DEBUG -   sp500: $379,216.63 -> $491,469.49 (return: 29.60%)
+2025-03-03 12:28:48,793 - src.portfolio - DEBUG -   bonds: $284,412.47 -> $278,418.57 (return: -2.11%)
+2025-03-03 12:28:48,793 - src.portfolio - DEBUG -   notes: $284,412.47 -> $354,897.19 (return: 24.78%)
+2025-03-03 12:28:48,793 - src.portfolio - DEBUG - New portfolio value: $1,124,785.25
+2025-03-03 12:28:48,793 - src.retirement - DEBUG - Year 2013: Fixed percentage withdrawal: 4.00% * $1,124,785.25 = $44,991.41
+2025-03-03 12:28:48,793 - src.portfolio - DEBUG -   Withdrew $19,658.78 from sp500
+2025-03-03 12:28:48,793 - src.portfolio - DEBUG -   Withdrew $11,136.74 from bonds
+2025-03-03 12:28:48,793 - src.portfolio - DEBUG -   Withdrew $14,195.89 from notes
+2025-03-03 12:28:48,793 - src.portfolio - DEBUG - After withdrawal: $1,079,793.84
+2025-03-03 12:28:48,793 - src.simulation - INFO -   Portfolio 'structured': $1,079,793.84 (Return: 13.90%)
+2025-03-03 12:28:48,793 - src.portfolio - DEBUG - Rebalancing portfolio (value: $1,079,793.84)
+2025-03-03 12:28:48,793 - src.portfolio - DEBUG -   sp500: $431,917.54 (40.00%)
+2025-03-03 12:28:48,793 - src.portfolio - DEBUG -   bonds: $323,938.15 (30.00%)
+2025-03-03 12:28:48,794 - src.portfolio - DEBUG -   notes: $323,938.15 (30.00%)
+2025-03-03 12:28:48,794 - src.simulation - INFO - Simulating year 2014
+2025-03-03 12:28:48,794 - src.simulation - INFO - ===== YEAR 2014 RETURNS =====
+2025-03-03 12:28:48,794 - src.simulation - INFO - S&P 500: 11.3906%, Bond: 5.8179%
+2025-03-03 12:28:48,794 - src.simulation - INFO - Selecting structured note for year 2014
+2025-03-03 12:28:48,794 - src.simulation - INFO - Found 4 notes available for year 2014
+2025-03-03 12:28:48,794 - src.simulation - INFO - Target protection level: 20%
+2025-03-03 12:28:48,794 - src.simulation - INFO - Found exact match: 20% Buffer, PR: 0.7920
+2025-03-03 12:28:48,794 - src.structured_notes - DEBUG - Created structured note: No ID, PR: 0.79, Protection: 0.20, Year: 2014
+2025-03-03 12:28:48,794 - src.simulation - INFO - STRUCTURED NOTE: S&P 500 20% Buffer Note (PR: 0.79)
+2025-03-03 12:28:48,794 - src.simulation - INFO - - Protection Level: 20.00%
+2025-03-03 12:28:48,794 - src.simulation - INFO - - Participation Rate: 0.7920
+2025-03-03 12:28:48,794 - src.simulation - INFO - - Protection Type: Buffer
+2025-03-03 12:28:48,794 - src.simulation - INFO - - Underlying Asset Return: 11.3906%
+2025-03-03 12:28:48,794 - src.structured_notes - INFO - BUFFERED NOTE CALCULATION:
+2025-03-03 12:28:48,794 - src.structured_notes - INFO -   Step 1: Analyze underlying return: 11.3906%
+2025-03-03 12:28:48,794 - src.structured_notes - INFO -   Step 2: Positive return detected, applying participation rate
+2025-03-03 12:28:48,794 - src.structured_notes - INFO -     Calculation: 11.3906% × 0.7920
+2025-03-03 12:28:48,794 - src.structured_notes - INFO -   Step 3: Final positive return result: 9.0209%
+2025-03-03 12:28:48,794 - src.simulation - INFO - - Final Note Return: 9.0209%
+2025-03-03 12:28:48,794 - src.portfolio - DEBUG - Applying returns to portfolio (value: $1,045,287.24)
+2025-03-03 12:28:48,794 - src.portfolio - DEBUG -   sp500: $627,172.34 -> $698,611.25 (return: 11.39%)
+2025-03-03 12:28:48,794 - src.portfolio - DEBUG -   bonds: $418,114.90 -> $442,440.22 (return: 5.82%)
+2025-03-03 12:28:48,794 - src.portfolio - DEBUG - New portfolio value: $1,141,051.47
+2025-03-03 12:28:48,794 - src.retirement - DEBUG - Year 2014: Fixed percentage withdrawal: 4.00% * $1,141,051.47 = $45,642.06
+2025-03-03 12:28:48,794 - src.portfolio - DEBUG -   Withdrew $27,944.45 from sp500
+2025-03-03 12:28:48,794 - src.portfolio - DEBUG -   Withdrew $17,697.61 from bonds
+2025-03-03 12:28:48,794 - src.portfolio - DEBUG - After withdrawal: $1,095,409.41
+2025-03-03 12:28:48,794 - src.simulation - INFO -   Portfolio 'traditional': $1,095,409.41 (Return: 4.80%)
+2025-03-03 12:28:48,794 - src.portfolio - DEBUG - Rebalancing portfolio (value: $1,095,409.41)
+2025-03-03 12:28:48,794 - src.portfolio - DEBUG -   sp500: $657,245.65 (60.00%)
+2025-03-03 12:28:48,794 - src.portfolio - DEBUG -   bonds: $438,163.76 (40.00%)
+2025-03-03 12:28:48,794 - src.portfolio - DEBUG - Applying returns to portfolio (value: $1,079,793.84)
+2025-03-03 12:28:48,794 - src.portfolio - DEBUG -   sp500: $431,917.54 -> $481,115.68 (return: 11.39%)
+2025-03-03 12:28:48,794 - src.portfolio - DEBUG -   bonds: $323,938.15 -> $342,784.41 (return: 5.82%)
+2025-03-03 12:28:48,794 - src.portfolio - DEBUG -   notes: $323,938.15 -> $353,160.15 (return: 9.02%)
+2025-03-03 12:28:48,794 - src.portfolio - DEBUG - New portfolio value: $1,177,060.24
+2025-03-03 12:28:48,794 - src.retirement - DEBUG - Year 2014: Fixed percentage withdrawal: 4.00% * $1,177,060.24 = $47,082.41
+2025-03-03 12:28:48,794 - src.portfolio - DEBUG -   Withdrew $19,244.63 from sp500
+2025-03-03 12:28:48,794 - src.portfolio - DEBUG -   Withdrew $13,711.38 from bonds
+2025-03-03 12:28:48,794 - src.portfolio - DEBUG -   Withdrew $14,126.41 from notes
+2025-03-03 12:28:48,794 - src.portfolio - DEBUG - After withdrawal: $1,129,977.83
+2025-03-03 12:28:48,794 - src.simulation - INFO -   Portfolio 'structured': $1,129,977.83 (Return: 4.65%)
+2025-03-03 12:28:48,794 - src.portfolio - DEBUG - Rebalancing portfolio (value: $1,129,977.83)
+2025-03-03 12:28:48,794 - src.portfolio - DEBUG -   sp500: $451,991.13 (40.00%)
+2025-03-03 12:28:48,794 - src.portfolio - DEBUG -   bonds: $338,993.35 (30.00%)
+2025-03-03 12:28:48,794 - src.portfolio - DEBUG -   notes: $338,993.35 (30.00%)
+2025-03-03 12:28:48,794 - src.simulation - INFO - Simulating year 2015
+2025-03-03 12:28:48,794 - src.simulation - INFO - ===== YEAR 2015 RETURNS =====
+2025-03-03 12:28:48,794 - src.simulation - INFO - S&P 500: -0.7266%, Bond: 0.5590%
+2025-03-03 12:28:48,794 - src.simulation - INFO - Selecting structured note for year 2015
+2025-03-03 12:28:48,795 - src.simulation - INFO - Found 4 notes available for year 2015
+2025-03-03 12:28:48,795 - src.simulation - INFO - Target protection level: 20%
+2025-03-03 12:28:48,795 - src.simulation - INFO - Found exact match: 20% Buffer, PR: 0.7432
+2025-03-03 12:28:48,795 - src.structured_notes - DEBUG - Created structured note: No ID, PR: 0.74, Protection: 0.20, Year: 2015
+2025-03-03 12:28:48,795 - src.simulation - INFO - STRUCTURED NOTE: S&P 500 20% Buffer Note (PR: 0.74)
+2025-03-03 12:28:48,795 - src.simulation - INFO - - Protection Level: 20.00%
+2025-03-03 12:28:48,795 - src.simulation - INFO - - Participation Rate: 0.7432
+2025-03-03 12:28:48,795 - src.simulation - INFO - - Protection Type: Buffer
+2025-03-03 12:28:48,795 - src.simulation - INFO - - Underlying Asset Return: -0.7266%
+2025-03-03 12:28:48,795 - src.structured_notes - INFO - BUFFERED NOTE CALCULATION:
+2025-03-03 12:28:48,795 - src.structured_notes - INFO -   Step 1: Analyze underlying return: -0.7266%
+2025-03-03 12:28:48,795 - src.structured_notes - INFO -   Step 2: Negative return detected, applying buffer protection
+2025-03-03 12:28:48,795 - src.structured_notes - INFO -     Absolute value of return: |-0.7266%| = 0.7266%
+2025-03-03 12:28:48,795 - src.structured_notes - INFO -     Buffer protection level: 20.0000%
+2025-03-03 12:28:48,795 - src.structured_notes - INFO -   Step 3: Loss is WITHIN buffer (0.7266% ≤ 20.0000%)
+2025-03-03 12:28:48,795 - src.structured_notes - INFO -     Full downside protection applies
+2025-03-03 12:28:48,795 - src.structured_notes - INFO -   Step 4: Final return result: 0.00%
+2025-03-03 12:28:48,795 - src.simulation - INFO - - Final Note Return: 0.0000%
+2025-03-03 12:28:48,795 - src.portfolio - DEBUG - Applying returns to portfolio (value: $1,095,409.41)
+2025-03-03 12:28:48,795 - src.portfolio - DEBUG -   sp500: $657,245.65 -> $652,470.10 (return: -0.73%)
+2025-03-03 12:28:48,795 - src.portfolio - DEBUG -   bonds: $438,163.76 -> $440,612.91 (return: 0.56%)
+2025-03-03 12:28:48,795 - src.portfolio - DEBUG - New portfolio value: $1,093,083.01
+2025-03-03 12:28:48,795 - src.retirement - DEBUG - Year 2015: Fixed percentage withdrawal: 4.00% * $1,093,083.01 = $43,723.32
+2025-03-03 12:28:48,795 - src.portfolio - DEBUG -   Withdrew $26,098.80 from sp500
+2025-03-03 12:28:48,795 - src.portfolio - DEBUG -   Withdrew $17,624.52 from bonds
+2025-03-03 12:28:48,795 - src.portfolio - DEBUG - After withdrawal: $1,049,359.69
+2025-03-03 12:28:48,795 - src.simulation - INFO -   Portfolio 'traditional': $1,049,359.69 (Return: -4.20%)
+2025-03-03 12:28:48,795 - src.portfolio - DEBUG - Rebalancing portfolio (value: $1,049,359.69)
+2025-03-03 12:28:48,795 - src.portfolio - DEBUG -   sp500: $629,615.81 (60.00%)
+2025-03-03 12:28:48,795 - src.portfolio - DEBUG -   bonds: $419,743.88 (40.00%)
+2025-03-03 12:28:48,795 - src.portfolio - DEBUG - Applying returns to portfolio (value: $1,129,977.83)
+2025-03-03 12:28:48,795 - src.portfolio - DEBUG -   sp500: $451,991.13 -> $448,706.97 (return: -0.73%)
+2025-03-03 12:28:48,795 - src.portfolio - DEBUG -   bonds: $338,993.35 -> $340,888.18 (return: 0.56%)
+2025-03-03 12:28:48,795 - src.portfolio - DEBUG -   notes: $338,993.35 -> $338,993.35 (return: 0.00%)
+2025-03-03 12:28:48,795 - src.portfolio - DEBUG - New portfolio value: $1,128,588.49
+2025-03-03 12:28:48,795 - src.retirement - DEBUG - Year 2015: Fixed percentage withdrawal: 4.00% * $1,128,588.49 = $45,143.54
+2025-03-03 12:28:48,795 - src.portfolio - DEBUG -   Withdrew $17,948.28 from sp500
+2025-03-03 12:28:48,795 - src.portfolio - DEBUG -   Withdrew $13,635.53 from bonds
+2025-03-03 12:28:48,795 - src.portfolio - DEBUG -   Withdrew $13,559.73 from notes
+2025-03-03 12:28:48,795 - src.portfolio - DEBUG - After withdrawal: $1,083,444.95
+2025-03-03 12:28:48,795 - src.simulation - INFO -   Portfolio 'structured': $1,083,444.95 (Return: -4.12%)
+2025-03-03 12:28:48,795 - src.portfolio - DEBUG - Rebalancing portfolio (value: $1,083,444.95)
+2025-03-03 12:28:48,795 - src.portfolio - DEBUG -   sp500: $433,377.98 (40.00%)
+2025-03-03 12:28:48,795 - src.portfolio - DEBUG -   bonds: $325,033.49 (30.00%)
+2025-03-03 12:28:48,795 - src.portfolio - DEBUG -   notes: $325,033.49 (30.00%)
+2025-03-03 12:28:48,795 - src.simulation - INFO - Simulating year 2016
+2025-03-03 12:28:48,795 - src.simulation - INFO - ===== YEAR 2016 RETURNS =====
+2025-03-03 12:28:48,795 - src.simulation - INFO - S&P 500: 9.5350%, Bond: 2.5215%
+2025-03-03 12:28:48,795 - src.simulation - INFO - Selecting structured note for year 2016
+2025-03-03 12:28:48,795 - src.simulation - INFO - Found 4 notes available for year 2016
+2025-03-03 12:28:48,795 - src.simulation - INFO - Target protection level: 20%
+2025-03-03 12:28:48,796 - src.simulation - INFO - Found exact match: 20% Buffer, PR: 0.7502
+2025-03-03 12:28:48,796 - src.structured_notes - DEBUG - Created structured note: No ID, PR: 0.75, Protection: 0.20, Year: 2016
+2025-03-03 12:28:48,796 - src.simulation - INFO - STRUCTURED NOTE: S&P 500 20% Buffer Note (PR: 0.75)
+2025-03-03 12:28:48,796 - src.simulation - INFO - - Protection Level: 20.00%
+2025-03-03 12:28:48,796 - src.simulation - INFO - - Participation Rate: 0.7502
+2025-03-03 12:28:48,796 - src.simulation - INFO - - Protection Type: Buffer
+2025-03-03 12:28:48,796 - src.simulation - INFO - - Underlying Asset Return: 9.5350%
+2025-03-03 12:28:48,796 - src.structured_notes - INFO - BUFFERED NOTE CALCULATION:
+2025-03-03 12:28:48,796 - src.structured_notes - INFO -   Step 1: Analyze underlying return: 9.5350%
+2025-03-03 12:28:48,796 - src.structured_notes - INFO -   Step 2: Positive return detected, applying participation rate
+2025-03-03 12:28:48,796 - src.structured_notes - INFO -     Calculation: 9.5350% × 0.7502
+2025-03-03 12:28:48,796 - src.structured_notes - INFO -   Step 3: Final positive return result: 7.1530%
+2025-03-03 12:28:48,796 - src.simulation - INFO - - Final Note Return: 7.1530%
+2025-03-03 12:28:48,796 - src.portfolio - DEBUG - Applying returns to portfolio (value: $1,049,359.69)
+2025-03-03 12:28:48,796 - src.portfolio - DEBUG -   sp500: $629,615.81 -> $689,649.83 (return: 9.54%)
+2025-03-03 12:28:48,796 - src.portfolio - DEBUG -   bonds: $419,743.88 -> $430,327.92 (return: 2.52%)
+2025-03-03 12:28:48,796 - src.portfolio - DEBUG - New portfolio value: $1,119,977.75
+2025-03-03 12:28:48,796 - src.retirement - DEBUG - Year 2016: Fixed percentage withdrawal: 4.00% * $1,119,977.75 = $44,799.11
+2025-03-03 12:28:48,796 - src.portfolio - DEBUG -   Withdrew $27,585.99 from sp500
+2025-03-03 12:28:48,796 - src.portfolio - DEBUG -   Withdrew $17,213.12 from bonds
+2025-03-03 12:28:48,796 - src.portfolio - DEBUG - After withdrawal: $1,075,178.64
+2025-03-03 12:28:48,796 - src.simulation - INFO -   Portfolio 'traditional': $1,075,178.64 (Return: 2.46%)
+2025-03-03 12:28:48,796 - src.portfolio - DEBUG - Rebalancing portfolio (value: $1,075,178.64)
+2025-03-03 12:28:48,796 - src.portfolio - DEBUG -   sp500: $645,107.18 (60.00%)
+2025-03-03 12:28:48,796 - src.portfolio - DEBUG -   bonds: $430,071.46 (40.00%)
+2025-03-03 12:28:48,796 - src.portfolio - DEBUG - Applying returns to portfolio (value: $1,083,444.95)
+2025-03-03 12:28:48,796 - src.portfolio - DEBUG -   sp500: $433,377.98 -> $474,700.67 (return: 9.54%)
+2025-03-03 12:28:48,796 - src.portfolio - DEBUG -   bonds: $325,033.49 -> $333,229.36 (return: 2.52%)
+2025-03-03 12:28:48,796 - src.portfolio - DEBUG -   notes: $325,033.49 -> $348,282.99 (return: 7.15%)
+2025-03-03 12:28:48,796 - src.portfolio - DEBUG - New portfolio value: $1,156,213.03
+2025-03-03 12:28:48,796 - src.retirement - DEBUG - Year 2016: Fixed percentage withdrawal: 4.00% * $1,156,213.03 = $46,248.52
+2025-03-03 12:28:48,796 - src.portfolio - DEBUG -   Withdrew $18,988.03 from sp500
+2025-03-03 12:28:48,796 - src.portfolio - DEBUG -   Withdrew $13,329.17 from bonds
+2025-03-03 12:28:48,796 - src.portfolio - DEBUG -   Withdrew $13,931.32 from notes
+2025-03-03 12:28:48,796 - src.portfolio - DEBUG - After withdrawal: $1,109,964.51
+2025-03-03 12:28:48,796 - src.simulation - INFO -   Portfolio 'structured': $1,109,964.51 (Return: 2.45%)
+2025-03-03 12:28:48,796 - src.portfolio - DEBUG - Rebalancing portfolio (value: $1,109,964.51)
+2025-03-03 12:28:48,796 - src.portfolio - DEBUG -   sp500: $443,985.80 (40.00%)
+2025-03-03 12:28:48,796 - src.portfolio - DEBUG -   bonds: $332,989.35 (30.00%)
+2025-03-03 12:28:48,796 - src.portfolio - DEBUG -   notes: $332,989.35 (30.00%)
+2025-03-03 12:28:48,796 - src.simulation - INFO - Simulating year 2017
+2025-03-03 12:28:48,796 - src.simulation - INFO - ===== YEAR 2017 RETURNS =====
+2025-03-03 12:28:48,796 - src.simulation - INFO - S&P 500: 19.4200%, Bond: 3.9995%
+2025-03-03 12:28:48,796 - src.simulation - INFO - Selecting structured note for year 2017
+2025-03-03 12:28:48,796 - src.simulation - INFO - Found 4 notes available for year 2017
+2025-03-03 12:28:48,796 - src.simulation - INFO - Target protection level: 20%
+2025-03-03 12:28:48,796 - src.simulation - INFO - Found exact match: 20% Buffer, PR: 0.9087
+2025-03-03 12:28:48,797 - src.structured_notes - DEBUG - Created structured note: No ID, PR: 0.91, Protection: 0.20, Year: 2017
+2025-03-03 12:28:48,797 - src.simulation - INFO - STRUCTURED NOTE: S&P 500 20% Buffer Note (PR: 0.91)
+2025-03-03 12:28:48,797 - src.simulation - INFO - - Protection Level: 20.00%
+2025-03-03 12:28:48,797 - src.simulation - INFO - - Participation Rate: 0.9087
+2025-03-03 12:28:48,797 - src.simulation - INFO - - Protection Type: Buffer
+2025-03-03 12:28:48,797 - src.simulation - INFO - - Underlying Asset Return: 19.4200%
+2025-03-03 12:28:48,797 - src.structured_notes - INFO - BUFFERED NOTE CALCULATION:
+2025-03-03 12:28:48,797 - src.structured_notes - INFO -   Step 1: Analyze underlying return: 19.4200%
+2025-03-03 12:28:48,797 - src.structured_notes - INFO -   Step 2: Positive return detected, applying participation rate
+2025-03-03 12:28:48,797 - src.structured_notes - INFO -     Calculation: 19.4200% × 0.9087
+2025-03-03 12:28:48,797 - src.structured_notes - INFO -   Step 3: Final positive return result: 17.6476%
+2025-03-03 12:28:48,797 - src.simulation - INFO - - Final Note Return: 17.6476%
+2025-03-03 12:28:48,797 - src.portfolio - DEBUG - Applying returns to portfolio (value: $1,075,178.64)
+2025-03-03 12:28:48,797 - src.portfolio - DEBUG -   sp500: $645,107.18 -> $770,386.78 (return: 19.42%)
+2025-03-03 12:28:48,797 - src.portfolio - DEBUG -   bonds: $430,071.46 -> $447,272.02 (return: 4.00%)
+2025-03-03 12:28:48,797 - src.portfolio - DEBUG - New portfolio value: $1,217,658.79
+2025-03-03 12:28:48,797 - src.retirement - DEBUG - Year 2017: Fixed percentage withdrawal: 4.00% * $1,217,658.79 = $48,706.35
+2025-03-03 12:28:48,797 - src.portfolio - DEBUG -   Withdrew $30,815.47 from sp500
+2025-03-03 12:28:48,797 - src.portfolio - DEBUG -   Withdrew $17,890.88 from bonds
+2025-03-03 12:28:48,797 - src.portfolio - DEBUG - After withdrawal: $1,168,952.44
+2025-03-03 12:28:48,797 - src.simulation - INFO -   Portfolio 'traditional': $1,168,952.44 (Return: 8.72%)
+2025-03-03 12:28:48,797 - src.portfolio - DEBUG - Rebalancing portfolio (value: $1,168,952.44)
+2025-03-03 12:28:48,797 - src.portfolio - DEBUG -   sp500: $701,371.46 (60.00%)
+2025-03-03 12:28:48,797 - src.portfolio - DEBUG -   bonds: $467,580.98 (40.00%)
+2025-03-03 12:28:48,797 - src.portfolio - DEBUG - Applying returns to portfolio (value: $1,109,964.51)
+2025-03-03 12:28:48,797 - src.portfolio - DEBUG -   sp500: $443,985.80 -> $530,207.69 (return: 19.42%)
+2025-03-03 12:28:48,797 - src.portfolio - DEBUG -   bonds: $332,989.35 -> $346,307.15 (return: 4.00%)
+2025-03-03 12:28:48,797 - src.portfolio - DEBUG -   notes: $332,989.35 -> $391,753.99 (return: 17.65%)
+2025-03-03 12:28:48,797 - src.portfolio - DEBUG - New portfolio value: $1,268,268.83
+2025-03-03 12:28:48,797 - src.retirement - DEBUG - Year 2017: Fixed percentage withdrawal: 4.00% * $1,268,268.83 = $50,730.75
+2025-03-03 12:28:48,797 - src.portfolio - DEBUG -   Withdrew $21,208.31 from sp500
+2025-03-03 12:28:48,797 - src.portfolio - DEBUG -   Withdrew $13,852.29 from bonds
+2025-03-03 12:28:48,797 - src.portfolio - DEBUG -   Withdrew $15,670.16 from notes
+2025-03-03 12:28:48,797 - src.portfolio - DEBUG - After withdrawal: $1,217,538.08
+2025-03-03 12:28:48,797 - src.simulation - INFO -   Portfolio 'structured': $1,217,538.08 (Return: 9.69%)
+2025-03-03 12:28:48,797 - src.portfolio - DEBUG - Rebalancing portfolio (value: $1,217,538.08)
+2025-03-03 12:28:48,797 - src.portfolio - DEBUG -   sp500: $487,015.23 (40.00%)
+2025-03-03 12:28:48,797 - src.portfolio - DEBUG -   bonds: $365,261.42 (30.00%)
+2025-03-03 12:28:48,797 - src.portfolio - DEBUG -   notes: $365,261.42 (30.00%)
+2025-03-03 12:28:48,797 - src.simulation - INFO - Simulating year 2018
+2025-03-03 12:28:48,797 - src.simulation - INFO - ===== YEAR 2018 RETURNS =====
+2025-03-03 12:28:48,797 - src.simulation - INFO - S&P 500: -6.2373%, Bond: 0.1159%
+2025-03-03 12:28:48,797 - src.simulation - INFO - Selecting structured note for year 2018
+2025-03-03 12:28:48,797 - src.simulation - INFO - Found 4 notes available for year 2018
+2025-03-03 12:28:48,797 - src.simulation - INFO - Target protection level: 20%
+2025-03-03 12:28:48,797 - src.simulation - INFO - Found exact match: 20% Buffer, PR: 0.7252
+2025-03-03 12:28:48,797 - src.structured_notes - DEBUG - Created structured note: No ID, PR: 0.73, Protection: 0.20, Year: 2018
+2025-03-03 12:28:48,797 - src.simulation - INFO - STRUCTURED NOTE: S&P 500 20% Buffer Note (PR: 0.73)
+2025-03-03 12:28:48,797 - src.simulation - INFO - - Protection Level: 20.00%
+2025-03-03 12:28:48,797 - src.simulation - INFO - - Participation Rate: 0.7252
+2025-03-03 12:28:48,797 - src.simulation - INFO - - Protection Type: Buffer
+2025-03-03 12:28:48,797 - src.simulation - INFO - - Underlying Asset Return: -6.2373%
+2025-03-03 12:28:48,797 - src.structured_notes - INFO - BUFFERED NOTE CALCULATION:
+2025-03-03 12:28:48,797 - src.structured_notes - INFO -   Step 1: Analyze underlying return: -6.2373%
+2025-03-03 12:28:48,798 - src.structured_notes - INFO -   Step 2: Negative return detected, applying buffer protection
+2025-03-03 12:28:48,798 - src.structured_notes - INFO -     Absolute value of return: |-6.2373%| = 6.2373%
+2025-03-03 12:28:48,798 - src.structured_notes - INFO -     Buffer protection level: 20.0000%
+2025-03-03 12:28:48,798 - src.structured_notes - INFO -   Step 3: Loss is WITHIN buffer (6.2373% ≤ 20.0000%)
+2025-03-03 12:28:48,798 - src.structured_notes - INFO -     Full downside protection applies
+2025-03-03 12:28:48,798 - src.structured_notes - INFO -   Step 4: Final return result: 0.00%
+2025-03-03 12:28:48,798 - src.simulation - INFO - - Final Note Return: 0.0000%
+2025-03-03 12:28:48,798 - src.portfolio - DEBUG - Applying returns to portfolio (value: $1,168,952.44)
+2025-03-03 12:28:48,798 - src.portfolio - DEBUG -   sp500: $701,371.46 -> $657,625.10 (return: -6.24%)
+2025-03-03 12:28:48,798 - src.portfolio - DEBUG -   bonds: $467,580.98 -> $468,123.05 (return: 0.12%)
+2025-03-03 12:28:48,798 - src.portfolio - DEBUG - New portfolio value: $1,125,748.16
+2025-03-03 12:28:48,798 - src.retirement - DEBUG - Year 2018: Fixed percentage withdrawal: 4.00% * $1,125,748.16 = $45,029.93
+2025-03-03 12:28:48,798 - src.portfolio - DEBUG -   Withdrew $26,305.00 from sp500
+2025-03-03 12:28:48,798 - src.portfolio - DEBUG -   Withdrew $18,724.92 from bonds
+2025-03-03 12:28:48,798 - src.portfolio - DEBUG - After withdrawal: $1,080,718.23
+2025-03-03 12:28:48,798 - src.simulation - INFO -   Portfolio 'traditional': $1,080,718.23 (Return: -7.55%)
+2025-03-03 12:28:48,798 - src.portfolio - DEBUG - Rebalancing portfolio (value: $1,080,718.23)
+2025-03-03 12:28:48,798 - src.portfolio - DEBUG -   sp500: $648,430.94 (60.00%)
+2025-03-03 12:28:48,798 - src.portfolio - DEBUG -   bonds: $432,287.29 (40.00%)
+2025-03-03 12:28:48,798 - src.portfolio - DEBUG - Applying returns to portfolio (value: $1,217,538.08)
+2025-03-03 12:28:48,798 - src.portfolio - DEBUG -   sp500: $487,015.23 -> $456,638.82 (return: -6.24%)
+2025-03-03 12:28:48,798 - src.portfolio - DEBUG -   bonds: $365,261.42 -> $365,684.88 (return: 0.12%)
+2025-03-03 12:28:48,798 - src.portfolio - DEBUG -   notes: $365,261.42 -> $365,261.42 (return: 0.00%)
+2025-03-03 12:28:48,798 - src.portfolio - DEBUG - New portfolio value: $1,187,585.12
+2025-03-03 12:28:48,798 - src.retirement - DEBUG - Year 2018: Fixed percentage withdrawal: 4.00% * $1,187,585.12 = $47,503.40
+2025-03-03 12:28:48,798 - src.portfolio - DEBUG -   Withdrew $18,265.55 from sp500
+2025-03-03 12:28:48,798 - src.portfolio - DEBUG -   Withdrew $14,627.40 from bonds
+2025-03-03 12:28:48,798 - src.portfolio - DEBUG -   Withdrew $14,610.46 from notes
+2025-03-03 12:28:48,798 - src.portfolio - DEBUG - After withdrawal: $1,140,081.72
+2025-03-03 12:28:48,798 - src.simulation - INFO -   Portfolio 'structured': $1,140,081.72 (Return: -6.36%)
+2025-03-03 12:28:48,798 - src.portfolio - DEBUG - Rebalancing portfolio (value: $1,140,081.72)
+2025-03-03 12:28:48,798 - src.portfolio - DEBUG -   sp500: $456,032.69 (40.00%)
+2025-03-03 12:28:48,798 - src.portfolio - DEBUG -   bonds: $342,024.52 (30.00%)
+2025-03-03 12:28:48,798 - src.portfolio - DEBUG -   notes: $342,024.52 (30.00%)
+2025-03-03 12:28:48,798 - src.simulation - INFO - Simulating year 2019
+2025-03-03 12:28:48,798 - src.simulation - INFO - ===== YEAR 2019 RETURNS =====
+2025-03-03 12:28:48,798 - src.simulation - INFO - S&P 500: 28.8781%, Bond: 8.8339%
+2025-03-03 12:28:48,798 - src.simulation - INFO - Selecting structured note for year 2019
+2025-03-03 12:28:48,798 - src.simulation - INFO - Found 4 notes available for year 2019
+2025-03-03 12:28:48,798 - src.simulation - INFO - Target protection level: 20%
+2025-03-03 12:28:48,798 - src.simulation - INFO - Found exact match: 20% Buffer, PR: 0.7050
+2025-03-03 12:28:48,798 - src.structured_notes - DEBUG - Created structured note: No ID, PR: 0.71, Protection: 0.20, Year: 2019
+2025-03-03 12:28:48,798 - src.simulation - INFO - STRUCTURED NOTE: S&P 500 20% Buffer Note (PR: 0.71)
+2025-03-03 12:28:48,798 - src.simulation - INFO - - Protection Level: 20.00%
+2025-03-03 12:28:48,798 - src.simulation - INFO - - Participation Rate: 0.7050
+2025-03-03 12:28:48,798 - src.simulation - INFO - - Protection Type: Buffer
+2025-03-03 12:28:48,798 - src.simulation - INFO - - Underlying Asset Return: 28.8781%
+2025-03-03 12:28:48,798 - src.structured_notes - INFO - BUFFERED NOTE CALCULATION:
+2025-03-03 12:28:48,798 - src.structured_notes - INFO -   Step 1: Analyze underlying return: 28.8781%
+2025-03-03 12:28:48,798 - src.structured_notes - INFO -   Step 2: Positive return detected, applying participation rate
+2025-03-03 12:28:48,798 - src.structured_notes - INFO -     Calculation: 28.8781% × 0.7050
+2025-03-03 12:28:48,798 - src.structured_notes - INFO -   Step 3: Final positive return result: 20.3598%
+2025-03-03 12:28:48,798 - src.simulation - INFO - - Final Note Return: 20.3598%
+2025-03-03 12:28:48,798 - src.portfolio - DEBUG - Applying returns to portfolio (value: $1,080,718.23)
+2025-03-03 12:28:48,798 - src.portfolio - DEBUG -   sp500: $648,430.94 -> $835,685.28 (return: 28.88%)
+2025-03-03 12:28:48,798 - src.portfolio - DEBUG -   bonds: $432,287.29 -> $470,474.99 (return: 8.83%)
+2025-03-03 12:28:48,798 - src.portfolio - DEBUG - New portfolio value: $1,306,160.27
+2025-03-03 12:28:48,799 - src.retirement - DEBUG - Year 2019: Fixed percentage withdrawal: 4.00% * $1,306,160.27 = $52,246.41
+2025-03-03 12:28:48,799 - src.portfolio - DEBUG -   Withdrew $33,427.41 from sp500
+2025-03-03 12:28:48,799 - src.portfolio - DEBUG -   Withdrew $18,819.00 from bonds
+2025-03-03 12:28:48,799 - src.portfolio - DEBUG - After withdrawal: $1,253,913.86
+2025-03-03 12:28:48,799 - src.simulation - INFO -   Portfolio 'traditional': $1,253,913.86 (Return: 16.03%)
+2025-03-03 12:28:48,799 - src.portfolio - DEBUG - Rebalancing portfolio (value: $1,253,913.86)
+2025-03-03 12:28:48,799 - src.portfolio - DEBUG -   sp500: $752,348.31 (60.00%)
+2025-03-03 12:28:48,799 - src.portfolio - DEBUG -   bonds: $501,565.54 (40.00%)
+2025-03-03 12:28:48,799 - src.portfolio - DEBUG - Applying returns to portfolio (value: $1,140,081.72)
+2025-03-03 12:28:48,799 - src.portfolio - DEBUG -   sp500: $456,032.69 -> $587,726.13 (return: 28.88%)
+2025-03-03 12:28:48,799 - src.portfolio - DEBUG -   bonds: $342,024.52 -> $372,238.52 (return: 8.83%)
+2025-03-03 12:28:48,799 - src.portfolio - DEBUG -   notes: $342,024.52 -> $411,659.89 (return: 20.36%)
+2025-03-03 12:28:48,799 - src.portfolio - DEBUG - New portfolio value: $1,371,624.53
+2025-03-03 12:28:48,799 - src.retirement - DEBUG - Year 2019: Fixed percentage withdrawal: 4.00% * $1,371,624.53 = $54,864.98
+2025-03-03 12:28:48,799 - src.portfolio - DEBUG -   Withdrew $23,509.05 from sp500
+2025-03-03 12:28:48,799 - src.portfolio - DEBUG -   Withdrew $14,889.54 from bonds
+2025-03-03 12:28:48,799 - src.portfolio - DEBUG -   Withdrew $16,466.40 from notes
+2025-03-03 12:28:48,799 - src.portfolio - DEBUG - After withdrawal: $1,316,759.55
+2025-03-03 12:28:48,799 - src.simulation - INFO -   Portfolio 'structured': $1,316,759.55 (Return: 15.50%)
+2025-03-03 12:28:48,799 - src.portfolio - DEBUG - Rebalancing portfolio (value: $1,316,759.55)
+2025-03-03 12:28:48,799 - src.portfolio - DEBUG -   sp500: $526,703.82 (40.00%)
+2025-03-03 12:28:48,799 - src.portfolio - DEBUG -   bonds: $395,027.86 (30.00%)
+2025-03-03 12:28:48,799 - src.portfolio - DEBUG -   notes: $395,027.86 (30.00%)
+2025-03-03 12:28:48,799 - src.simulation - INFO - Simulating year 2020
+2025-03-03 12:28:48,799 - src.simulation - INFO - ===== YEAR 2020 RETURNS =====
+2025-03-03 12:28:48,799 - src.simulation - INFO - S&P 500: 16.2589%, Bond: 7.7151%
+2025-03-03 12:28:48,799 - src.simulation - INFO - Selecting structured note for year 2020
+2025-03-03 12:28:48,799 - src.simulation - INFO - Found 4 notes available for year 2020
+2025-03-03 12:28:48,799 - src.simulation - INFO - Target protection level: 20%
+2025-03-03 12:28:48,799 - src.simulation - INFO - Found exact match: 20% Buffer, PR: 0.5688
+2025-03-03 12:28:48,799 - src.structured_notes - DEBUG - Created structured note: No ID, PR: 0.57, Protection: 0.20, Year: 2020
+2025-03-03 12:28:48,799 - src.simulation - INFO - STRUCTURED NOTE: S&P 500 20% Buffer Note (PR: 0.57)
+2025-03-03 12:28:48,799 - src.simulation - INFO - - Protection Level: 20.00%
+2025-03-03 12:28:48,799 - src.simulation - INFO - - Participation Rate: 0.5688
+2025-03-03 12:28:48,799 - src.simulation - INFO - - Protection Type: Buffer
+2025-03-03 12:28:48,799 - src.simulation - INFO - - Underlying Asset Return: 16.2589%
+2025-03-03 12:28:48,799 - src.structured_notes - INFO - BUFFERED NOTE CALCULATION:
+2025-03-03 12:28:48,799 - src.structured_notes - INFO -   Step 1: Analyze underlying return: 16.2589%
+2025-03-03 12:28:48,799 - src.structured_notes - INFO -   Step 2: Positive return detected, applying participation rate
+2025-03-03 12:28:48,799 - src.structured_notes - INFO -     Calculation: 16.2589% × 0.5688
+2025-03-03 12:28:48,800 - src.structured_notes - INFO -   Step 3: Final positive return result: 9.2486%
+2025-03-03 12:28:48,800 - src.simulation - INFO - - Final Note Return: 9.2486%
+2025-03-03 12:28:48,800 - src.portfolio - DEBUG - Applying returns to portfolio (value: $1,253,913.86)
+2025-03-03 12:28:48,800 - src.portfolio - DEBUG -   sp500: $752,348.31 -> $874,672.05 (return: 16.26%)
+2025-03-03 12:28:48,800 - src.portfolio - DEBUG -   bonds: $501,565.54 -> $540,261.67 (return: 7.72%)
+2025-03-03 12:28:48,800 - src.portfolio - DEBUG - New portfolio value: $1,414,933.72
+2025-03-03 12:28:48,800 - src.retirement - DEBUG - Year 2020: Fixed percentage withdrawal: 4.00% * $1,414,933.72 = $56,597.35
+2025-03-03 12:28:48,800 - src.portfolio - DEBUG -   Withdrew $34,986.88 from sp500
+2025-03-03 12:28:48,800 - src.portfolio - DEBUG -   Withdrew $21,610.47 from bonds
+2025-03-03 12:28:48,800 - src.portfolio - DEBUG - After withdrawal: $1,358,336.37
+2025-03-03 12:28:48,800 - src.simulation - INFO -   Portfolio 'traditional': $1,358,336.37 (Return: 8.33%)
+2025-03-03 12:28:48,800 - src.portfolio - DEBUG - Rebalancing portfolio (value: $1,358,336.37)
+2025-03-03 12:28:48,800 - src.portfolio - DEBUG -   sp500: $815,001.82 (60.00%)
+2025-03-03 12:28:48,800 - src.portfolio - DEBUG -   bonds: $543,334.55 (40.00%)
+2025-03-03 12:28:48,800 - src.portfolio - DEBUG - Applying returns to portfolio (value: $1,316,759.55)
+2025-03-03 12:28:48,800 - src.portfolio - DEBUG -   sp500: $526,703.82 -> $612,340.19 (return: 16.26%)
+2025-03-03 12:28:48,800 - src.portfolio - DEBUG -   bonds: $395,027.86 -> $425,504.54 (return: 7.72%)
+2025-03-03 12:28:48,800 - src.portfolio - DEBUG -   notes: $395,027.86 -> $431,562.59 (return: 9.25%)
+2025-03-03 12:28:48,800 - src.portfolio - DEBUG - New portfolio value: $1,469,407.32
+2025-03-03 12:28:48,800 - src.retirement - DEBUG - Year 2020: Fixed percentage withdrawal: 4.00% * $1,469,407.32 = $58,776.29
+2025-03-03 12:28:48,800 - src.portfolio - DEBUG -   Withdrew $24,493.61 from sp500
+2025-03-03 12:28:48,800 - src.portfolio - DEBUG -   Withdrew $17,020.18 from bonds
+2025-03-03 12:28:48,800 - src.portfolio - DEBUG -   Withdrew $17,262.50 from notes
+2025-03-03 12:28:48,800 - src.portfolio - DEBUG - After withdrawal: $1,410,631.03
+2025-03-03 12:28:48,800 - src.simulation - INFO -   Portfolio 'structured': $1,410,631.03 (Return: 7.13%)
+2025-03-03 12:28:48,800 - src.portfolio - DEBUG - Rebalancing portfolio (value: $1,410,631.03)
+2025-03-03 12:28:48,800 - src.portfolio - DEBUG -   sp500: $564,252.41 (40.00%)
+2025-03-03 12:28:48,800 - src.portfolio - DEBUG -   bonds: $423,189.31 (30.00%)
+2025-03-03 12:28:48,800 - src.portfolio - DEBUG -   notes: $423,189.31 (30.00%)
+2025-03-03 12:28:48,800 - src.simulation - INFO - Simulation completed
+2025-03-03 12:28:48,802 - src.main - INFO - Saved detailed results to results/simulation_results_20250303_122848.csv
+2025-03-03 12:28:48,803 - src.main - INFO - Saved summary statistics to results/simulation_summary_20250303_122848.csv
+2025-03-03 12:28:48,803 - src.main - INFO - Simulation completed successfully

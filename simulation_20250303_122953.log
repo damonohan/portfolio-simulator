@@ -1,0 +1,40 @@
+2025-03-03 12:29:53,716 - src.main - INFO - Starting Portfolio Simulator
+2025-03-03 12:29:53,716 - src.main - INFO - Simulation period: 1976 to 2020
+2025-03-03 12:29:53,716 - src.main - INFO - Loading market data and structured notes...
+2025-03-03 12:29:53,716 - src.data_processing - INFO - Loading S&P 500 data from raw_data/sp500_yearly.csv
+2025-03-03 12:29:53,720 - src.data_processing - INFO - Loaded S&P 500 returns for 48 years
+2025-03-03 12:29:53,720 - src.data_processing - INFO - Loading bond return data from raw_data/bond_returns.csv
+2025-03-03 12:29:53,722 - src.data_processing - INFO - Loaded bond returns for 49 years
+2025-03-03 12:29:53,722 - src.data_processing - INFO - Loading structured note data from note_data/growth_notes.csv
+2025-03-03 12:29:53,723 - src.data_processing - INFO - Loaded 196 structured notes
+2025-03-03 12:29:53,723 - src.data_processing - INFO - Aligning data from 1976 to 2020
+2025-03-03 12:29:53,723 - src.data_processing - INFO - Found overlapping data for 44 years: 1977.0 to 2020.0
+2025-03-03 12:29:53,723 - src.main - WARNING - Adjusted simulation period to 1977.0-2020 based on available data
+2025-03-03 12:29:53,723 - src.main - INFO - Running portfolio simulation...
+2025-03-03 12:29:53,723 - src.portfolio - DEBUG - Rebalancing portfolio (value: $1,000,000.00)
+2025-03-03 12:29:53,724 - src.portfolio - DEBUG -   sp500: $600,000.00 (60.00%)
+2025-03-03 12:29:53,724 - src.portfolio - DEBUG -   bonds: $400,000.00 (40.00%)
+2025-03-03 12:29:53,724 - src.portfolio - INFO - Created portfolio with initial value $1,000,000.00
+2025-03-03 12:29:53,724 - src.portfolio - INFO -   Allocations: {'sp500': 0.6, 'bonds': 0.4}
+2025-03-03 12:29:53,724 - src.simulation - INFO - Created portfolio 'traditional' with allocations: {'sp500': 0.6, 'bonds': 0.4}
+2025-03-03 12:29:53,724 - src.portfolio - DEBUG - Rebalancing portfolio (value: $1,000,000.00)
+2025-03-03 12:29:53,724 - src.portfolio - DEBUG -   sp500: $400,000.00 (40.00%)
+2025-03-03 12:29:53,724 - src.portfolio - DEBUG -   bonds: $300,000.00 (30.00%)
+2025-03-03 12:29:53,724 - src.portfolio - DEBUG -   notes: $300,000.00 (30.00%)
+2025-03-03 12:29:53,724 - src.portfolio - INFO - Created portfolio with initial value $1,000,000.00
+2025-03-03 12:29:53,724 - src.portfolio - INFO -   Allocations: {'sp500': 0.4, 'bonds': 0.3, 'notes': 0.3}
+2025-03-03 12:29:53,724 - src.simulation - INFO - Created portfolio 'structured' with allocations: {'sp500': 0.4, 'bonds': 0.3, 'notes': 0.3}
+2025-03-03 12:29:53,724 - src.retirement - INFO - Created withdrawal strategy: FixedPercentageWithdrawal
+2025-03-03 12:29:53,724 - src.retirement - INFO - Fixed percentage withdrawal: 4.00%
+2025-03-03 12:29:53,724 - src.simulation - INFO - Created withdrawal strategy: FixedPercentageWithdrawal
+2025-03-03 12:29:53,724 - src.simulation - INFO - Initialized simulation: 1977.0 to 2020
+2025-03-03 12:29:53,724 - src.simulation - INFO - Running simulation from 1977.0 to 2020
+2025-03-03 12:29:53,724 - src.main - ERROR - Error during simulation: 'numpy.float64' object cannot be interpreted as an integer
+Traceback (most recent call last):
+  File "/Users/dennismonohan/Documents/portfolio_simulator/src/main.py", line 229, in main
+    simulation.run_simulation()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/dennismonohan/Documents/portfolio_simulator/src/simulation.py", line 210, in run_simulation
+    for year in range(self.start_year, self.end_year + 1):
+                ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: 'numpy.float64' object cannot be interpreted as an integer

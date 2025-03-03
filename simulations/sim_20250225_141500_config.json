@@ -1,0 +1,11 @@
+{
+    "start_cash": 100000.0,
+    "horizon": 10,
+    "contrib": 10000,
+    "protection": 0.1,
+    "allocation": {
+        "sp500": 0.4,
+        "note": 0.3,
+        "bond": 0.3
+    }
+}

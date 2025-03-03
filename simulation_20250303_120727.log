@@ -1,0 +1,92 @@
+2025-03-03 12:07:27,633 - src.main - INFO - Starting Portfolio Simulator
+2025-03-03 12:07:27,633 - src.main - INFO - Simulation period: 2000 to 2020
+2025-03-03 12:07:27,633 - src.main - INFO - Loading market data and structured notes...
+2025-03-03 12:07:27,633 - src.data_processing - INFO - Loading S&P 500 data from data/sp500_returns.csv
+2025-03-03 12:07:27,646 - src.data_processing - INFO - Loaded S&P 500 returns for 48 years
+2025-03-03 12:07:27,646 - src.data_processing - INFO - Loading bond return data from data/bond_returns.csv
+2025-03-03 12:07:27,648 - src.data_processing - INFO - Loaded bond returns for 49 years
+2025-03-03 12:07:27,648 - src.data_processing - INFO - Loading structured note data from data/structured_notes.csv
+2025-03-03 12:07:27,649 - src.data_processing - INFO - Loaded 196 structured notes
+2025-03-03 12:07:27,649 - src.data_processing - INFO - Aligning data from 2000 to 2020
+2025-03-03 12:07:27,649 - src.data_processing - INFO - Found overlapping data for 21 years: 2000.0 to 2020.0
+2025-03-03 12:07:27,650 - src.main - INFO - Running portfolio simulation...
+2025-03-03 12:07:27,651 - src.portfolio - INFO - Created portfolio with initial value $1,000,000.00
+2025-03-03 12:07:27,651 - src.portfolio - INFO -   Allocations: {'sp500': 0.6, 'bonds': 0.4}
+2025-03-03 12:07:27,651 - src.simulation - INFO - Created portfolio 'traditional' with allocations: {'sp500': 0.6, 'bonds': 0.4}
+2025-03-03 12:07:27,651 - src.portfolio - INFO - Created portfolio with initial value $1,000,000.00
+2025-03-03 12:07:27,651 - src.portfolio - INFO -   Allocations: {'sp500': 0.4, 'bonds': 0.3, 'notes': 0.3}
+2025-03-03 12:07:27,651 - src.simulation - INFO - Created portfolio 'structured' with allocations: {'sp500': 0.4, 'bonds': 0.3, 'notes': 0.3}
+2025-03-03 12:07:27,651 - src.retirement - INFO - Created withdrawal strategy: FixedPercentageWithdrawal
+2025-03-03 12:07:27,651 - src.retirement - INFO - Fixed percentage withdrawal: 4.00%
+2025-03-03 12:07:27,651 - src.simulation - INFO - Created withdrawal strategy: FixedPercentageWithdrawal
+2025-03-03 12:07:27,651 - src.simulation - INFO - Initialized simulation: 2000 to 2020
+2025-03-03 12:07:27,651 - src.simulation - INFO - Running simulation from 2000 to 2020
+2025-03-03 12:07:27,651 - src.simulation - INFO - Simulating year 2000
+2025-03-03 12:07:27,652 - src.simulation - INFO -   Portfolio 'traditional': $945,533.28 (Return: -5.45%)
+2025-03-03 12:07:27,652 - src.simulation - INFO -   Portfolio 'structured': $953,615.92 (Return: -4.64%)
+2025-03-03 12:07:27,652 - src.simulation - INFO - Simulating year 2001
+2025-03-03 12:07:27,652 - src.simulation - INFO -   Portfolio 'traditional': $867,131.16 (Return: -8.29%)
+2025-03-03 12:07:27,652 - src.simulation - INFO -   Portfolio 'structured': $882,389.13 (Return: -7.47%)
+2025-03-03 12:07:27,652 - src.simulation - INFO - Simulating year 2002
+2025-03-03 12:07:27,653 - src.simulation - INFO -   Portfolio 'traditional': $743,820.49 (Return: -14.22%)
+2025-03-03 12:07:27,653 - src.simulation - INFO -   Portfolio 'structured': $755,384.83 (Return: -14.39%)
+2025-03-03 12:07:27,653 - src.simulation - INFO - Simulating year 2003
+2025-03-03 12:07:27,653 - src.simulation - INFO -   Portfolio 'traditional': $838,247.29 (Return: 12.69%)
+2025-03-03 12:07:27,653 - src.simulation - INFO -   Portfolio 'structured': $866,289.74 (Return: 14.68%)
+2025-03-03 12:07:27,653 - src.simulation - INFO - Simulating year 2004
+2025-03-03 12:07:27,653 - src.simulation - INFO -   Portfolio 'traditional': $861,894.65 (Return: 2.82%)
+2025-03-03 12:07:27,653 - src.simulation - INFO -   Portfolio 'structured': $894,401.25 (Return: 3.25%)
+2025-03-03 12:07:27,653 - src.simulation - INFO - Simulating year 2005
+2025-03-03 12:07:27,654 - src.simulation - INFO -   Portfolio 'traditional': $850,355.12 (Return: -1.34%)
+2025-03-03 12:07:27,654 - src.simulation - INFO -   Portfolio 'structured': $883,395.80 (Return: -1.23%)
+2025-03-03 12:07:27,654 - src.simulation - INFO - Simulating year 2006
+2025-03-03 12:07:27,654 - src.simulation - INFO -   Portfolio 'traditional': $897,116.33 (Return: 5.50%)
+2025-03-03 12:07:27,654 - src.simulation - INFO -   Portfolio 'structured': $942,141.52 (Return: 6.65%)
+2025-03-03 12:07:27,654 - src.simulation - INFO - Simulating year 2007
+2025-03-03 12:07:27,654 - src.simulation - INFO -   Portfolio 'traditional': $900,479.57 (Return: 0.37%)
+2025-03-03 12:07:27,654 - src.simulation - INFO -   Portfolio 'structured': $943,334.60 (Return: 0.13%)
+2025-03-03 12:07:27,654 - src.simulation - INFO - Simulating year 2008
+2025-03-03 12:07:27,655 - src.simulation - INFO -   Portfolio 'traditional': $688,578.09 (Return: -23.53%)
+2025-03-03 12:07:27,655 - src.simulation - INFO -   Portfolio 'structured': $707,447.72 (Return: -25.01%)
+2025-03-03 12:07:27,655 - src.simulation - INFO - Simulating year 2009
+2025-03-03 12:07:27,655 - src.simulation - INFO -   Portfolio 'traditional': $763,674.96 (Return: 10.91%)
+2025-03-03 12:07:27,655 - src.simulation - INFO -   Portfolio 'structured': $805,017.19 (Return: 13.79%)
+2025-03-03 12:07:27,655 - src.simulation - INFO - Simulating year 2010
+2025-03-03 12:07:27,655 - src.simulation - INFO -   Portfolio 'traditional': $807,533.81 (Return: 5.74%)
+2025-03-03 12:07:27,655 - src.simulation - INFO -   Portfolio 'structured': $856,398.11 (Return: 6.38%)
+2025-03-03 12:07:27,655 - src.simulation - INFO - Simulating year 2011
+2025-03-03 12:07:27,656 - src.simulation - INFO -   Portfolio 'traditional': $799,807.00 (Return: -0.96%)
+2025-03-03 12:07:27,656 - src.simulation - INFO -   Portfolio 'structured': $841,689.67 (Return: -1.72%)
+2025-03-03 12:07:27,656 - src.simulation - INFO - Simulating year 2012
+2025-03-03 12:07:27,656 - src.simulation - INFO -   Portfolio 'traditional': $838,605.65 (Return: 4.85%)
+2025-03-03 12:07:27,656 - src.simulation - INFO -   Portfolio 'structured': $892,409.32 (Return: 6.03%)
+2025-03-03 12:07:27,656 - src.simulation - INFO - Simulating year 2013
+2025-03-03 12:07:27,657 - src.simulation - INFO -   Portfolio 'traditional': $941,259.81 (Return: 12.24%)
+2025-03-03 12:07:27,657 - src.simulation - INFO -   Portfolio 'structured': $1,033,156.36 (Return: 15.77%)
+2025-03-03 12:07:27,657 - src.simulation - INFO - Simulating year 2014
+2025-03-03 12:07:27,657 - src.simulation - INFO -   Portfolio 'traditional': $986,393.80 (Return: 4.80%)
+2025-03-03 12:07:27,657 - src.simulation - INFO -   Portfolio 'structured': $1,088,273.67 (Return: 5.33%)
+2025-03-03 12:07:27,657 - src.simulation - INFO - Simulating year 2015
+2025-03-03 12:07:27,657 - src.simulation - INFO -   Portfolio 'traditional': $944,926.97 (Return: -4.20%)
+2025-03-03 12:07:27,657 - src.simulation - INFO -   Portfolio 'structured': $1,043,458.18 (Return: -4.12%)
+2025-03-03 12:07:27,657 - src.simulation - INFO - Simulating year 2016
+2025-03-03 12:07:27,658 - src.simulation - INFO -   Portfolio 'traditional': $968,176.40 (Return: 2.46%)
+2025-03-03 12:07:27,658 - src.simulation - INFO -   Portfolio 'structured': $1,076,731.96 (Return: 3.19%)
+2025-03-03 12:07:27,658 - src.simulation - INFO - Simulating year 2017
+2025-03-03 12:07:27,658 - src.simulation - INFO -   Portfolio 'traditional': $1,052,617.79 (Return: 8.72%)
+2025-03-03 12:07:27,658 - src.simulation - INFO -   Portfolio 'structured': $1,190,212.69 (Return: 10.54%)
+2025-03-03 12:07:27,658 - src.simulation - INFO - Simulating year 2018
+2025-03-03 12:07:27,658 - src.simulation - INFO -   Portfolio 'traditional': $973,164.69 (Return: -7.55%)
+2025-03-03 12:07:27,658 - src.simulation - INFO -   Portfolio 'structured': $1,114,494.70 (Return: -6.36%)
+2025-03-03 12:07:27,658 - src.simulation - INFO - Simulating year 2019
+2025-03-03 12:07:27,659 - src.simulation - INFO -   Portfolio 'traditional': $1,129,123.81 (Return: 16.03%)
+2025-03-03 12:07:27,659 - src.simulation - INFO -   Portfolio 'structured': $1,310,210.84 (Return: 17.56%)
+2025-03-03 12:07:27,659 - src.simulation - INFO - Simulating year 2020
+2025-03-03 12:07:27,659 - src.simulation - INFO -   Portfolio 'traditional': $1,223,154.16 (Return: 8.33%)
+2025-03-03 12:07:27,659 - src.simulation - INFO -   Portfolio 'structured': $1,424,089.29 (Return: 8.69%)
+2025-03-03 12:07:27,659 - src.simulation - INFO - Simulation completed
+2025-03-03 12:07:27,664 - src.main - INFO - Saved detailed results to results/simulation_results_20250303_120727.csv
+2025-03-03 12:07:27,666 - src.main - INFO - Saved summary statistics to results/simulation_summary_20250303_120727.csv
+2025-03-03 12:07:28,353 - src.main - INFO - Saved portfolio values plot to results/portfolio_values_20250303_120727.png
+2025-03-03 12:07:28,648 - src.main - INFO - Saved annual returns plot to results/annual_returns_20250303_120727.png
+2025-03-03 12:07:28,648 - src.main - INFO - Simulation completed successfully
