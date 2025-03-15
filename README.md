@@ -19,22 +19,56 @@ A tool for simulating and comparing different investment portfolio strategies, i
    cd portfolio-simulator
    ```
 
-2. Create a virtual environment (recommended for Python 3.11.7):
+2. **Python Requirements**:
+   - This application requires **Python 3.11.7** specifically
+   - For Mac users, we recommend installing Python from [python.org](https://www.python.org/downloads/release/python-3117/) instead of using Homebrew
+   - Download and install the macOS 64-bit universal2 installer for best compatibility
+
+3. **Mac-specific Requirements**:
+   - Ensure you have Tcl/Tk installed properly for tkinter GUI
+   - If using the python.org installer, this should be included
+   - Run this command to verify tkinter is working:
+     ```
+     python -m tkinter
+     ```
+     If a window appears, tkinter is installed correctly
+
+4. Create a virtual environment:
    ```
    python -m venv venv
    source venv/bin/activate  # On Mac: source venv/bin/activate
                              # On Windows: venv\Scripts\activate
    ```
 
-3. Install required packages:
+5. Install required packages:
    ```
    pip install -r requirements.txt
    ```
+
+6. **For Mac users with GUI issues**:
+   - If the GUI appears black or doesn't render properly, try the following:
+     ```
+     # Install latest Pillow version
+     pip install --upgrade pillow
+     
+     # Force reinstall of tkinter-related packages
+     pip uninstall -y tk tcl
+     pip install tk tcl
+     ```
+   - Also try running the application with:
+     ```
+     # Recommended approach for Mac:
+     pythonw run_gui.py
+     ```
 
 ## Running the Application
 
 Launch the GUI application:
 ```
+# On Mac:
+pythonw run_gui.py
+
+# On other platforms:
 python run_gui.py
 ```
 
@@ -64,6 +98,31 @@ This project includes tools for generating and updating the simulation data:
    - Configure structured note parameters and withdrawal strategies
    - Click "Run Simulation" to execute
    - View and analyze results in the "Results" tab
+
+## Troubleshooting
+
+### GUI Issues on Mac
+
+1. **Black or non-responsive GUI**:
+   - Verify you're using Python 3.11.7 from python.org: `python --version`
+   - Ensure tkinter is working: `python -m tkinter`
+   - Try using `pythonw` instead of `python` to launch the application
+   - Install XQuartz if needed for Tcl/Tk support: https://www.xquartz.org/
+
+2. **Matplotlib rendering issues**:
+   - Try setting a different backend: 
+     ```python
+     import matplotlib
+     matplotlib.use('TkAgg')  # or try 'Agg', 'Qt5Agg'
+     ```
+   - Add this at the beginning of any script with matplotlib plots
+
+3. **Other Mac rendering issues**:
+   - On newer versions of macOS, try setting the following environment variable:
+     ```
+     export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
+     ```
+   - Add the above to your .zshrc or .bash_profile
 
 ## Command Line Simulations
 

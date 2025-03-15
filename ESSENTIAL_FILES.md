@@ -2,6 +2,27 @@
 
 This document outlines the core files and directories that are essential for the proper functioning of the Portfolio Simulator application.
 
+## Environment Requirements
+
+### Python Version
+- **Python 3.11.7** is specifically required
+- Install from [python.org](https://www.python.org/downloads/release/python-3117/) for best compatibility
+- Using other Python versions may cause GUI rendering issues
+
+### Mac-specific Requirements
+- Properly installed Tcl/Tk framework (included with python.org installer)
+- Use `pythonw` instead of `python` to launch GUI applications
+- XQuartz may be needed for some graphical elements: https://www.xquartz.org/
+- For black GUI issues:
+  - Reinstall Pillow: `pip install --upgrade pillow`
+  - Verify tkinter works: `python -m tkinter`
+
+### Required Python Packages
+- numpy==1.24.3
+- pandas==2.0.2
+- matplotlib==3.7.1
+- pillow==9.5.0
+
 ## Core Application Files
 
 - **`gui.py`**: Main GUI implementation for the application
@@ -45,6 +66,36 @@ This document outlines the core files and directories that are essential for the
 ## Documentation
 
 - **`README.md`**: Main project documentation and usage instructions
+
+## Running on Different Platforms
+
+### Mac
+```bash
+# Verify tkinter is working
+python -m tkinter
+
+# Launch application with pythonw (recommended)
+pythonw run_gui.py
+```
+
+### Windows/Linux
+```bash
+# Standard launch
+python run_gui.py
+```
+
+## Troubleshooting
+
+### GUI Issues
+- Matplotlib backend issues - Try adding this to scripts:
+  ```python
+  import matplotlib
+  matplotlib.use('TkAgg')  # or try 'Agg', 'Qt5Agg'
+  ```
+- For macOS fork safety issues:
+  ```bash
+  export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
+  ```
 
 ## Directories that can be safely removed
 
