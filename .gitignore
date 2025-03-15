@@ -31,12 +31,31 @@ ENV/
 .LSOverride
 ._*
 
+# Logs and temporary files
+*.log
+simulations/*.log
+temp/
+
+# Build artifacts
+build/
+dist/
+*.spec
+
 # Large directories and files
 results/
-simulations/
-*.log
+# Keep raw data for generating new datasets
+# raw_data/ 
 *.zip
-raw_data/
+
+# Packaging experiments
+PortfolioSimulator_OneClick/
+Portfolio_Simulator_Mac/
+PortfolioSimulator_Mac_OneClick.zip
+
+# Keep essential simulation output directories but exclude contents
+!results/.gitkeep
+!raw_data/.gitkeep
+!note_data/.gitkeep
 
 # IDE
 .idea/

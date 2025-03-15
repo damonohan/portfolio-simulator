@@ -15,14 +15,15 @@ A tool for simulating and comparing different investment portfolio strategies, i
 
 1. Clone this repository:
    ```
-   git clone https://github.com/yourusername/portfolio_simulator.git
-   cd portfolio_simulator
+   git clone https://github.com/damonohan/portfolio-simulator.git
+   cd portfolio-simulator
    ```
 
-2. Create a virtual environment (optional but recommended):
+2. Create a virtual environment (recommended for Python 3.11.7):
    ```
    python -m venv venv
-   source venv/bin/activate  # On Windows: venv\Scripts\activate
+   source venv/bin/activate  # On Mac: source venv/bin/activate
+                             # On Windows: venv\Scripts\activate
    ```
 
 3. Install required packages:
@@ -30,53 +31,87 @@ A tool for simulating and comparing different investment portfolio strategies, i
    pip install -r requirements.txt
    ```
 
+## Running the Application
+
+Launch the GUI application:
+```
+python run_gui.py
+```
+
+The GUI provides an intuitive interface to configure and run portfolio simulations.
+
 ## Data Files
 
-The simulator requires three CSV files:
+The simulator uses three main CSV files:
 
 1. **S&P 500 Returns** (`data/sp500_returns.csv`): Historical annual returns of the S&P 500 index
 2. **Bond Returns** (`data/bond_returns.csv`): Historical annual returns of bonds
-3. **Structured Notes** (`data/structured_notes.csv`): Historical structured note parameters
+3. **Structured Notes** (`data/structured_notes.csv`): Structured note parameters
+
+## Data Generation Tools
+
+This project includes tools for generating and updating the simulation data:
+
+- **raw_data_collector.py**: Fetches market data from public sources
+- **note_calculator.py**: Calculates structured note participation rates
+- **cleanup_notes.py**: Utility for managing note data files
 
 ## Using the GUI
 
-The Portfolio Simulator includes a graphical user interface for easier use:
-
-1. Launch the GUI:
-   ```
-   python run_gui.py
-   ```
-   or
-   ```
-   ./run_gui.py
-   ```
-
-2. In the GUI:
+1. In the GUI:
    - Configure simulation parameters in the "Simulation Setup" tab
    - Set date ranges, initial value, and portfolio allocations
    - Configure structured note parameters and withdrawal strategies
    - Click "Run Simulation" to execute
    - View and analyze results in the "Results" tab
 
-## Running Simulations from Command Line
+## Command Line Simulations
 
-### Basic Usage
-
-Run a basic simulation with default parameters:
+You can also run simulations from the command line:
 
 ```
-python run_simulation.py
+python run_simulation.py --start_year 2005 --end_year 2022 --initial_value 1000000
 ```
 
-### Customizing Simulations
+For full command-line options, see the later sections of this README.
 
-You can customize various simulation parameters:
+## Project Structure
 
-```
-python run_simulation.py --start_year 2005 --end_year 2022 --initial_value 1000000 --protection_level 0.1 --withdrawal_rate 0.04
-```
+- `src/`: Core simulation code
+  - `data_processing.py`: Functions for loading and processing data
+  - `structured_notes.py`: Classes for structured note modeling
+  - `portfolio.py`: Portfolio management classes
+  - `retirement.py`: Withdrawal strategy implementations
+  - `simulation.py`: Core simulation engine
+  - `main.py`: Main implementation of the simulator
+- `data/`: Essential data files
+- `images/`: Images used in the GUI
+- `run_simulation.py`: Command-line entry point
+- `gui.py`: Graphical user interface implementation
+- `run_gui.py`: GUI entry point
+- `raw_data_collector.py`: Tool to collect market data
+- `note_calculator.py`: Tool to calculate structured note parameters
+- `results/`: Directory for simulation outputs
 
-### Command Line Options
+## Working with GitHub
+
+The portfolio simulator is set up for version control with Git and GitHub.
+
+### When working on multiple computers:
+
+1. Always pull the latest changes before starting work:
+   ```
+   git pull origin main
+   ```
+
+2. After making changes, commit and push them:
+   ```
+   git add .
+   git commit -m "Description of changes"
+   git push origin main
+   ```
+
+### Command Line Options for Simulations
 
 - **Data Sources**:
   - `--sp500_file`: Path to S&P 500 returns CSV file (default: 'data/sp500_returns.csv')
@@ -105,32 +140,4 @@ python run_simulation.py --start_year 2005 --end_year 2022 --initial_value 10000
 
 - **Output Options**:
   - `--output_dir`: Directory to save results (default: 'results')
-  - `--plot`: Generate and save plots
-
-## Output
-
-Simulation results are saved to the specified output directory:
-
-- **Detailed Results**: CSV file with year-by-year data for each portfolio
-- **Summary Statistics**: CSV file with aggregate performance metrics
-- **Plots** (if enabled): Portfolio values and annual returns over time
-
-## Example
-
-Compare a traditional 60/40 portfolio with a structured note portfolio during retirement:
-
-```
-python run_simulation.py --start_year 2000 --end_year 2020 --initial_value 1000000 --withdrawal_rate 0.04 --withdrawal_type fixed_percent --protection_level 0.1 --plot
-```
-
-## Project Structure
-
-- `src/data_processing.py`: Functions for loading and processing data
-- `src/structured_notes.py`: Classes for structured note modeling
-- `src/portfolio.py`: Portfolio management classes
-- `src/retirement.py`: Withdrawal strategy implementations
-- `src/simulation.py`: Core simulation engine
-- `src/main.py`: Main implementation of the simulator
-- `run_simulation.py`: Command-line entry point
-- `gui.py`: Graphical user interface implementation
-- `run_gui.py`: GUI entry point 
+  - `--plot`: Generate and save plots 
