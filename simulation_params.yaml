@@ -1,0 +1,59 @@
+# Portfolio Simulator - Historical Retirement Analysis
+# Parameter file for structured note retirement simulations
+
+simulation_name: "Historical Retirement Analysis 2024-03"
+description: "Analysis of structured note portfolios vs traditional portfolios across historical retirement starting years"
+
+# Time parameters
+time_parameters:
+  # Starting retirement years to analyze
+  start_years: [1980, 1981, 1982, 1983, 1984, 1985, 1986, 1987, 1988, 1989, 
+                1990, 1991, 1992, 1993, 1994, 1995, 1996, 1997, 1998, 1999,
+                2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009,
+                2010, 2011, 2012, 2013, 2014]
+  # Retirement time horizons in years
+  time_horizons: [10, 20, 30]
+  
+# Portfolio parameters
+portfolio_allocations:
+  balanced:
+    equity: 0.40
+    notes: 0.30
+    bonds: 0.30
+  growth:
+    equity: 0.60
+    notes: 0.20
+    bonds: 0.20
+  conservative:
+    equity: 0.20
+    notes: 0.30
+    bonds: 0.50
+  note_focused:
+    equity: 0.30
+    notes: 0.40
+    bonds: 0.30
+  traditional:
+    equity: 0.60
+    notes: 0.00
+    bonds: 0.40
+
+# Note parameters
+note_parameters:
+  protection_levels: [0.05, 0.10, 0.15, 0.20]
+  
+# Withdrawal parameters
+withdrawal_parameters:
+  rates: [0.03, 0.04, 0.05]
+  method: "inflation_adjusted"  # Options: fixed, inflation_adjusted, percentage
+  
+# Initial conditions
+initial_conditions:
+  starting_amount: 1000000
+  rebalancing_frequency: "yearly"  # Options: yearly, quarterly, monthly, none
+
+# Output parameters
+output_parameters:
+  results_directory: "./simulation_results/historical_retirement_2024_03/"
+  save_yearly_data: true
+  database_file: "./simulation_results/historical_retirement_2024_03/simulation_db.sqlite"
+  calculate_metrics: ["survival_rate", "terminal_value", "cagr", "volatility", "max_drawdown", "sharpe_ratio"] 
